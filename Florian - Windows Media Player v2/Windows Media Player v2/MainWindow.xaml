@@ -1,0 +1,35 @@
+﻿<Window x:Class="Windows_Media_Player_v2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="481" Width="1576">
+    <Grid>
+        <ListBox Name="Debug" Height="255" HorizontalAlignment="Left" Margin="18,23,0,0" VerticalAlignment="Top" Width="531" />
+        <Button Name="Run_Browser" Content="Run_Browser" Height="23" HorizontalAlignment="Left" Margin="568,31,0,0" VerticalAlignment="Top" Width="75" Click="Run_Browser_Click" />
+        <ListBox Height="248" HorizontalAlignment="Left" Margin="700,93,0,0" Name="List_Lect" VerticalAlignment="Top" Width="233" />
+        <Button Content="Add" Height="23" HorizontalAlignment="Left" Margin="700,60,0,0" Name="List_Lect_Add" VerticalAlignment="Top" Width="75" />
+        <Button Content="Remove" Height="22" HorizontalAlignment="Left" Margin="858,60,0,0" Name="List_Lect_Remove" VerticalAlignment="Top" Width="75" />
+        <Button Content="Next" Height="22" HorizontalAlignment="Left" Margin="569,144,0,0" Name="Next" VerticalAlignment="Top" Width="74" Click="Next_Click" />
+        <Button Content="Prev" Height="19" HorizontalAlignment="Left" Margin="569,172,0,0" Name="Prev" VerticalAlignment="Top" Width="74" Click="Prev_Click" />
+        <Button Content="Play" Height="22" HorizontalAlignment="Left" Margin="568,116,0,0" Name="Play" VerticalAlignment="Top" Width="74" Click="Run_Click" />
+        <CheckBox Content="Shuffle" Height="16" HorizontalAlignment="Left" Margin="566,214,0,0" Name="Shuffle" VerticalAlignment="Top" Checked="Shuffle_checked" Unchecked="Shuffle_unchecked"/>
+        <CheckBox Content="Repeat" Height="16" HorizontalAlignment="Left" Margin="568,236,0,0" Name="Repeat" VerticalAlignment="Top" Checked="Repeat_checked" Unchecked="Repeat_unchecked"/>
+        <Button Content="Clear debug" Height="23" HorizontalAlignment="Left" Margin="566,60,0,0" Name="Clear_debug" VerticalAlignment="Top" Width="75" Click="Clear_debug_Click" />
+        
+        <TextBox Height="21" HorizontalAlignment="Left" Margin="700,23,0,0" Name="Name_Liste_Lecture" VerticalAlignment="Top" Width="151" />
+        <Button Content="Create Playlist" Height="22" HorizontalAlignment="Left" Margin="858,23,0,0" Name="Create_Change_Liste_lecture" VerticalAlignment="Top" Width="85" />
+
+        <ListBox Height="261" HorizontalAlignment="Left" Margin="999,93,0,0" Name="List_Playlists" VerticalAlignment="Top" Width="233" />
+        <TextBox Height="21" HorizontalAlignment="Left" Margin="999,12,0,0" Name="Name_To_Create_playlist" VerticalAlignment="Top" Width="121" />
+        <Button Content="Create Playlist" Height="22" HorizontalAlignment="Left" Margin="1140,11,0,0" Name="Create_Playlist" VerticalAlignment="Top" Width="92" />
+        <Button Content="Delete Playlist" Height="22" HorizontalAlignment="Left" Margin="999,59,0,0" Name="Delete_Playlist" VerticalAlignment="Top" Width="98" />
+        <Button Content="View Playlist" Height="22" HorizontalAlignment="Right" Margin="0,61,322,0" Name="View_Playlist" VerticalAlignment="Top" Width="102" />
+
+        <ListBox Height="261" HorizontalAlignment="Left" Margin="1294,130,0,0" Name="List_Playlist" VerticalAlignment="Top" Width="232" />
+        <Button Content="Add To Playlist" Height="23" HorizontalAlignment="Left" Margin="1294,13,0,0" Name="Add_To_Playlist" VerticalAlignment="Top" Width="106" />
+        <Button Content="Remove To Playlist" Height="22" HorizontalAlignment="Left" Margin="1421,14,0,0" Name="Remove_To_Playlist" VerticalAlignment="Top" Width="116" />
+        <Button Content="Clear Playlist" Height="23" HorizontalAlignment="Left" Margin="1294,51,0,0" Name="Clear_To_Playlist" VerticalAlignment="Top" Width="106" />
+        <Button Content="Delete Playlist" Height="22" HorizontalAlignment="Left" Margin="1421,52,0,0" Name="Delete_To_Playlist" VerticalAlignment="Top" Width="116" />
+        <TextBox Height="21" HorizontalAlignment="Left" Margin="1294,93,0,0" Name="Name_To_Playlist" VerticalAlignment="Top" Width="151" />
+        <Button Content="Change Name" Height="22" HorizontalAlignment="Left" Margin="1452,93,0,0" Name="Change_Name_To_Playlist" VerticalAlignment="Top" Width="85" />
+    </Grid>
+</Window>

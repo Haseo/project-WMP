@@ -1,0 +1,16 @@
+﻿<Window x:Class="Windows_Media_Player_v2.Browser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Browser" Height="431" Width="1102">
+    <Grid>
+        <TextBox Name="Browser_Path" Height="23" HorizontalAlignment="Left" Margin="25,12,0,0" VerticalAlignment="Top" Width="397" TextChanged="Browser_Path_TextChanged" />
+        <ListBox Name="Browser_List" Height="276" HorizontalAlignment="Left" Margin="25,56,0,0" VerticalAlignment="Top" Width="411" MouseDoubleClick="Browser_List_DoubleClick" KeyDown="KeyDownHandler" />
+        <Button Name="Browser_Valid" Content="Open" Height="20" HorizontalAlignment="Left" Margin="248,352,0,0" VerticalAlignment="Top" Width="91" Click="Browser_Valid_Click" />
+        <Button Name="Browser_Cancel" Content="Cancel" Height="20" HorizontalAlignment="Left" Margin="345,352,0,0" VerticalAlignment="Top" Width="91" Click="Button_Cancel_Click" />
+        <TextBox Name="Browser_Research" Height="23" HorizontalAlignment="Left" Margin="25,349,0,0" VerticalAlignment="Top" Width="217" TextChanged="Browser_Research_TextChanged" />
+        <TextBlock Name="Browser_Debug" Height="247" HorizontalAlignment="Left" Margin="668,56,0,0" VerticalAlignment="Top" Width="391" />
+        <CheckBox Name="Browser_checkbox_audio" Content="Audio" Height="16" HorizontalAlignment="Left" Margin="472,96,0,0" VerticalAlignment="Top" Width="120" Checked="Check_Box_Audio" Unchecked="UnCheck_Box_Audio" />
+        <CheckBox Name="Browser_checkbox_video" Content="Video" Height="16" HorizontalAlignment="Left" Margin="472,136,0,0" VerticalAlignment="Top" Width="120" Checked="Check_Box_Video" Unchecked="UnCheck_Box_Video" />
+        <CheckBox Name="Browser_checkbox_image" Content="Image" Height="16" HorizontalAlignment="Left" Margin="472,56,0,0" VerticalAlignment="Top" Width="120" Checked="Check_Box_Image" Unchecked="UnCheck_Box_Image" />
+    </Grid>
+</Window>
