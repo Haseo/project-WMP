@@ -12,24 +12,21 @@ using System.Xml.Serialization;
 namespace WMPv2
 {
     [Serializable]
-    public class MediaPlaylist : ViewModelBase
+    public class MediaPlaylist
     {
-        [XmlIgnore]
         public string _Image_s { get; set; }
-        [XmlIgnore]
         public string _Name_s { get; set; }
-        [XmlIgnore]
         public List<string> _Playlist { get; set; }
         [XmlIgnore]
         static int nb = 0;
         [XmlIgnore]
-        int currentnb;
+        string currentnb;
 
         public MediaPlaylist()
         {
-            currentnb = nb;
+            currentnb = nb.ToString();
             _Image_s = @"Images\AlbumImage.png";
-            _Name_s = "Unnamed Playlist " + currentnb.ToString();
+            _Name_s = "Unnamed Playlist " + currentnb;
             _Playlist = new List<string>();
             ++nb;
         }
@@ -49,5 +46,6 @@ namespace WMPv2
         {
             _Playlist.Add(path);
         }
+
     }
 }

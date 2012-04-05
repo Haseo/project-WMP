@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Windows.Media.Animation;
+using System.ComponentModel;
 
 namespace WMPv2
 {
@@ -27,8 +28,6 @@ namespace WMPv2
         public DispatcherTimer _timer = new DispatcherTimer();
         private bool isPlaying = false;
         private bool isPause = true;
-        private ListPlaylists _Playlists;
-        private MediaPlaylist _CurrentPlaylist;
         private Uri _LastVideoSource;
         private string _Time;
         private string _DefaultTime;
@@ -41,18 +40,17 @@ namespace WMPv2
 
             _timer.Interval = TimeSpan.FromMilliseconds(50);
             _timer.Tick += new EventHandler(timer_Tick);
-            _Playlists = new ListPlaylists();
-            _CurrentPlaylist = _Playlists._Current;
             _DefaultTime = "00:00:00";
             _DispTotalMediaTime = false;
             _Style = new ColorStyle();
-
             //this.WindowStyle = WindowStyle.None;
+            PlaylistBox.ItemsSource = Locator.WMPLocator.MainStaticListPlaylists._Names;
 
             MediaPlayer.MediaOpened += (o, e) =>
             {
                 SeekBar.Maximum = MediaPlayer.NaturalDuration.TimeSpan.Seconds + (MediaPlayer.NaturalDuration.TimeSpan.Minutes * 60) + (MediaPlayer.NaturalDuration.TimeSpan.Hours * 360);
             };
+            LibraryGrid.DataContext = new LibraryViewModel();
         }
 
         private void ShowVideo(object sender, EventArgs e)
@@ -82,5 +80,9 @@ namespace WMPv2
             this.Close();
         }
 
+        private void PannelPlaylistList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

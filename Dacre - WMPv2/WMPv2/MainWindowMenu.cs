@@ -67,7 +67,7 @@ namespace WMPv2
             this.ShowPannelButton.Source = logo;
             PannelGrid.Width = spliterWidth.Value;
             MediaBorder.Margin = new System.Windows.Thickness(0, 0, spliterWidth.Value, 0);
-            PannelDrag.Margin = new System.Windows.Thickness(0, 0, spliterWidth.Value, 0);
+            PannelDrag.Margin = new System.Windows.Thickness(0, 0, spliterWidth.Value - 2, 0);
         }
 
         private void SetPannelSize(object sender, DragDeltaEventArgs e)
@@ -77,7 +77,7 @@ namespace WMPv2
             if (panelSize >= 150.0 && panelSize < ((PlayerWindow.Width / 10) * 6))
             {
                 MediaBorder.Margin = new System.Windows.Thickness(0, 0, panelSize, 0);
-                PannelDrag.Margin = new System.Windows.Thickness(0, 0, panelSize, 0);
+                PannelDrag.Margin = new System.Windows.Thickness(0, 0, panelSize - 2, 0);
                 spliterWidth = new GridLength(PannelDrag.Margin.Right);
                 PannelGrid.Width = panelSize;
             }
@@ -85,16 +85,6 @@ namespace WMPv2
             {
                 panelSize = 225.0;
                 ShowPannel(sender, e);
-            }
-        }
-
-        private void SavePlaylist(object sender, EventArgs e)
-        {
-            using (FileStream fs = new FileStream(_CurrentPlaylist._Name_s + ".xml", FileMode.OpenOrCreate))
-            {
-                XmlSerializer xml = new XmlSerializer(typeof(string));
-
-                xml.Serialize(fs,_CurrentPlaylist._Name_s);
             }
         }
 

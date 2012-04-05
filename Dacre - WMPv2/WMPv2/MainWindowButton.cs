@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using Microsoft.Win32;
 
 namespace WMPv2
 {
@@ -98,22 +99,28 @@ namespace WMPv2
         private void Load(object sender, EventArgs e)
         {
             Microsoft.Win32.OpenFileDialog openwin;
-            string extension;
 
             MediaTimeDisp.Text = null;
             openwin = new Microsoft.Win32.OpenFileDialog();
             openwin.AddExtension = true;
             openwin.DefaultExt = "*.*";
-            openwin.Filter = "All (*.*)|*.*|Video (*.avi, *.mpg, *.wmv)|*.avi;*.mpg;*.wmv|Image (*.jpg, *.png)|*.jpg;*.png";
+            openwin.Filter = "All (*.*)|*.*|Video (*.avi, *.mpg, *.wmv)|*.avi;*.mpg;*.wmv|Image (*.jpg, *.png)|*.jpg;*.png|Musique (*.wma, *.mp3, *.wav)|*.wma;*.mp3;*.wav" ;
             openwin.ShowDialog();
+            LoadFile(openwin);
+        }
+
+        private void LoadFile(OpenFileDialog openwin)
+        {
+            string extension;
+
             if (openwin.FileName.Length > 0)
             {
                 extension = openwin.FileName.Substring(openwin.FileName.Length - 4);
-                if (extension == ".avi" || extension == ".mpg" || extension == ".wmv")
+                if (extension == ".avi" || extension == ".mpg" || extension == ".wmv" || extension == ".wma" || extension == ".mp3" || extension == ".wav")
                 {
                     calcMediaTime();
                     _LastVideoSource = new Uri(openwin.FileName);
-                    ShowVideo(sender, e);
+                    ShowVideo(new object(), new EventArgs());
                     MediaTimeDisp.Text = _DefaultTime;
                 }
                 if (string.Equals(extension, ".jpg", StringComparison.CurrentCultureIgnoreCase) || string.Equals(extension, ".png", StringComparison.CurrentCultureIgnoreCase))
@@ -124,11 +131,44 @@ namespace WMPv2
                     logo.UriSource = new Uri(openwin.FileName);
                     logo.EndInit();
                     this.ImagePlayer.Source = logo;
-                    ShowImage(sender, e);
+                    ShowImage(new object(), new EventArgs());
                 }
+                Locator.WMPLocator.MainStaticListPlaylists._Current.addElemtoPlaylist(openwin.FileName);
+                UpdatePannelPlaylist();
             }
         }
 
+        private void LoadFile(string filename)
+        {
+            string extension;
+            Microsoft.Win32.OpenFileDialog openwin = new Microsoft.Win32.OpenFileDialog();
+
+            openwin.FileName = filename.ToString();
+            if (openwin.FileName.Length > 0)
+            {
+                extension = openwin.FileName.Substring(openwin.FileName.Length - 4);
+                if (extension == ".avi" || extension == ".mpg" || extension == ".wmv" || extension == ".wma" || extension == ".mp3" || extension == ".wav")
+                {
+                    calcMediaTime();
+                    _LastVideoSource = new Uri(openwin.FileName);
+                    ShowVideo(new object(), new EventArgs());
+                    MediaTimeDisp.Text = _DefaultTime;
+                }
+                if (string.Equals(extension, ".jpg", StringComparison.CurrentCultureIgnoreCase) || string.Equals(extension, ".png", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    BitmapImage logo = new BitmapImage();
+
+                    logo.BeginInit();
+                    logo.UriSource = new Uri(filename);
+                    logo.EndInit();
+                    this.ImagePlayer.Source = logo;
+                    ShowImage(new object(), new EventArgs());
+                }
+                Locator.WMPLocator.MainStaticListPlaylists._Current._Playlist.Add(openwin.FileName);
+                UpdatePannelPlaylist();
+            }
+        }
+        
         private void ChangeScreen(object sender, EventArgs e)
         {
             BitmapImage logo = new BitmapImage();

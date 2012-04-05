@@ -10,8 +10,9 @@ using System.IO;
 
 namespace WMPv2
 {
-    public class ListPlaylists : List<MediaPlaylist>
+    public class MediaPlaylistModel : ViewModelBase
     {
+        MediaPlaylist Playlist { get; set; }
 
     }
 }

@@ -22,5 +22,10 @@ namespace WMPv2
         {
             InitializeComponent();
         }
+
+        private void Close_Click(object sender = null, RoutedEventArgs e = null)
+        {
+            this.Close();
+        }
     }
 }

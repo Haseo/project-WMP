@@ -8,15 +8,16 @@ using System.Text;
 
 namespace WMPv2.Locator
 {
-    public class CurrentPlaylistLocator
+    public class WMPLocator
     {
-        private static MediaPlaylist _main;
+        private static ListPlaylistsModel _mainListPlaylists;
+        private static MediaPlaylistModel _mainPlaylist;
         private static ColorStyle _mainStyle;
 
         /// <summary>
         /// Initializes a new instance of the ViewModelLocator class.
         /// </summary>
-        public CurrentPlaylistLocator()
+        public WMPLocator()
         {
             ////if (ViewModelBase.IsInDesignModeStatic)
             ////{
@@ -27,67 +28,90 @@ namespace WMPv2.Locator
             ////    // Create run time view models
             ////}
 
-            CreateMain();
+            CreateMainListPlaylists();
+            CreateMainPlaylist();
             CreateMainStyle();
         }
 
         public static void ClearMain()
         {
-            _main.Cleanup();
+            _mainListPlaylists.Cleanup();
+            _mainPlaylist.Cleanup();
             _mainStyle.Cleanup();
-            _main = null;
+            _mainListPlaylists = null;
+            _mainPlaylist = null;
             _mainStyle = null;
         }
 
-        /// <summary>
-        /// Gets the Main property.
-        /// </summary>
-        public static MediaPlaylist MainStatic
+        #region ListPlaylists
+        public static ListPlaylistsModel MainStaticListPlaylists
         {
             get
             {
-                if (_main == null)
+                if (_mainListPlaylists == null)
                 {
-                    CreateMain();
+                    CreateMainListPlaylists();
                 }
 
-                return _main;
+                return _mainListPlaylists;
             }
         }
 
-        /// <summary>
-        /// Gets the Main property.
-        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
             "CA1822:MarkMembersAsStatic",
             Justification = "This non-static member is needed for data binding purposes.")]
-        public MediaPlaylist Main
+        public ListPlaylistsModel MainListPlaylists
         {
             get
             {
-                return MainStatic;
+                return MainStaticListPlaylists;
             }
         }
 
-        /// <summary>
-        /// Provides a deterministic way to delete the Main property.
-        /// </summary>
-        /// <summary>
-        /// Provides a deterministic way to create the Main property.
-        /// </summary>
-        public static void CreateMain()
+        public static void CreateMainListPlaylists()
         {
-            if (_main == null)
+            if (_mainListPlaylists == null)
             {
-                _main = new MediaPlaylist();
+                _mainListPlaylists = new ListPlaylistsModel();
+            }
+        }
+        #endregion
+
+        #region Playlist
+        public static MediaPlaylistModel MainStaticPlaylist
+        {
+            get
+            {
+                if (_mainPlaylist == null)
+                {
+                    CreateMainPlaylist();
+                }
+
+                return _mainPlaylist;
             }
         }
 
-        ///////////////////////////////////////////////////////////////////////////////////////////
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
+            "CA1822:MarkMembersAsStatic",
+            Justification = "This non-static member is needed for data binding purposes.")]
+        public MediaPlaylistModel MainPlaylist
+        {
+            get
+            {
+                return MainStaticPlaylist;
+            }
+        }
 
-        /// <summary>
-        /// Gets the Main property.
-        /// </summary>
+        public static void CreateMainPlaylist()
+        {
+            if (_mainPlaylist == null)
+            {
+                _mainPlaylist = new MediaPlaylistModel();
+            }
+        } 
+        #endregion
+
+        #region Style
         public static ColorStyle MainStaticStyle
         {
             get
@@ -101,9 +125,6 @@ namespace WMPv2.Locator
             }
         }
 
-        /// <summary>
-        /// Gets the Main property.
-        /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
             "CA1822:MarkMembersAsStatic",
             Justification = "This non-static member is needed for data binding purposes.")]
@@ -115,16 +136,14 @@ namespace WMPv2.Locator
             }
         }
 
-        /// <summary>
-        /// Provides a deterministic way to create the Main property.
-        /// </summary>
         public static void CreateMainStyle()
         {
             if (_mainStyle == null)
             {
                 _mainStyle = new ColorStyle();
             }
-        }
+        } 
+        #endregion
 
         /// <summary>
         /// Cleans up all the resources.

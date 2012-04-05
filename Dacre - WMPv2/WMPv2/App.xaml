@@ -8,7 +8,7 @@
              mc:Ignorable="d">
     
     <Application.Resources>
-        <vm:CurrentPlaylistLocator  x:Key="Locator"
-                                        d:IsDataSource="True" />
+        <vm:WMPLocator  x:Key="Locator"
+                        d:IsDataSource="True" />
     </Application.Resources>
 </Application>
