@@ -33,6 +33,8 @@ namespace WMPv2
                 double size;
 
                 size = Locator.WMPLocator.MainStaticListPlaylists._Names.Count * 28;
+                if (size == 0.0)
+                    size = 21;
                 changeExpandLogo(MenuLibPlaylistOpen, true);
                 MenuLibraryRow0.Height = new System.Windows.GridLength(size);
             }

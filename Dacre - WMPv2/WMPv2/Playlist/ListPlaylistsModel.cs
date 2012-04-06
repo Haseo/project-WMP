@@ -51,30 +51,30 @@ namespace WMPv2
 
         public void XMLOpen()
         {
-            using (FileStream fs = new FileStream("ListPlaylist.xml", FileMode.OpenOrCreate))
-            {
-                XmlSerializer xml = new XmlSerializer(typeof(List<string>));
+            //using (FileStream fs = new FileStream("ListPlaylist.xml", FileMode.OpenOrCreate))
+            //{
+            //    XmlSerializer xml = new XmlSerializer(typeof(List<string>));
 
-                _Names = xml.Deserialize(fs) as List<string>;
-            }
+            //    _Names = xml.Deserialize(fs) as List<string>;
+            //}
         }
 
         public void OpenPlaylistfromXML(string playlistname)
         {
-            int count;
+            //int count;
 
-            if (playlistname.Length > 0)
-            {
-                count = playlistname.IndexOf(".xml");
-                if (count == -1)
-                    playlistname = playlistname + ".xml";
-                using (FileStream fs = new FileStream(playlistname, FileMode.Open))
-                {
-                    XmlSerializer xml = new XmlSerializer(typeof(MediaPlaylist));
+            //if (playlistname.Length > 0)
+            //{
+            //    count = playlistname.IndexOf(".xml");
+            //    if (count == -1)
+            //        playlistname = playlistname + ".xml";
+            //    using (FileStream fs = new FileStream(playlistname, FileMode.Open))
+            //    {
+            //        XmlSerializer xml = new XmlSerializer(typeof(MediaPlaylist));
 
-                    _Current = xml.Deserialize(fs) as MediaPlaylist;
-                }
-            }
+            //        _Current = xml.Deserialize(fs) as MediaPlaylist;
+            //    }
+            //}
         }
 
         public void XMLSavePlaylist()

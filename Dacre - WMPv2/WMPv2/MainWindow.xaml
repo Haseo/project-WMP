@@ -8,15 +8,9 @@
         Title="MainWindow" Height="450" Width="800" MouseLeftButtonDown="OnWindowClick"
         mc:Ignorable="d"  KeyDown="KeyAction" Background="#FF1D1D1D" BorderBrush="#FF333333">
 	<Window.Resources>
-		<LinearGradientBrush x:Key="TextBoxBorder" EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
-			<GradientStop Color="#ABADB3" Offset="0.05"/>
-			<GradientStop Color="#E2E3EA" Offset="0.07"/>
-			<GradientStop Color="#E3E9EF" Offset="1"/>
-		</LinearGradientBrush>
 		<Style x:Key="PannelPlaylistNameTemp" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
 			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
 			<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
-			<Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
 			<Setter Property="BorderThickness" Value="1"/>
 			<Setter Property="Padding" Value="1"/>
 			<Setter Property="AllowDrop" Value="true"/>
