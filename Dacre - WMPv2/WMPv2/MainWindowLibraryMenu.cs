@@ -12,6 +12,11 @@ namespace WMPv2
     public partial class MainWindow : Window
     {
 
+        private bool isPlaylistExpand = false;
+        private bool isMusiqueExpand = false;
+        private bool isVideoExpand = false;
+        private bool isImageExpand = false;
+
         void changeExpandLogo(Image image, bool expanded)
         {
             BitmapImage logo = new BitmapImage();
@@ -28,18 +33,20 @@ namespace WMPv2
         #region Expand
         void ExpandPlaylist(object sender, EventArgs e)
         {
-            if (MenuLibraryRow0.ActualHeight < 21)
+            if (!isPlaylistExpand)
             {
                 double size;
 
-                size = Locator.WMPLocator.MainStaticListPlaylists._Names.Count * 28;
+                size = 8 + ((Locator.WMPLocator.MainStaticListPlaylists._Names.Count + 1) * 16);
                 if (size == 0.0)
                     size = 21;
                 changeExpandLogo(MenuLibPlaylistOpen, true);
                 MenuLibraryRow0.Height = new System.Windows.GridLength(size);
+                isPlaylistExpand = true;
             }
             else
             {
+                isPlaylistExpand = false;
                 changeExpandLogo(MenuLibPlaylistOpen, false);
                 MenuLibraryRow0.Height = new System.Windows.GridLength(20.0);
             }
@@ -47,13 +54,15 @@ namespace WMPv2
 
         void ExpandMusique(object sender, EventArgs e)
         {
-            if (MenuLibraryRow1.ActualHeight < 21)
+            if (!isMusiqueExpand)
             {
                 changeExpandLogo(MenuLibMusiqueOpen, true);
                 MenuLibraryRow1.Height = new System.Windows.GridLength(60.0);
+                isMusiqueExpand = true;
             }
             else
             {
+                isMusiqueExpand = false;
                 changeExpandLogo(MenuLibMusiqueOpen, false);
                 MenuLibraryRow1.Height = new System.Windows.GridLength(20.0);
             }
@@ -61,13 +70,15 @@ namespace WMPv2
 
         void ExpandVideo(object sender, EventArgs e)
         {
-            if (MenuLibraryRow2.ActualHeight < 21)
+            if (!isVideoExpand)
             {
                 changeExpandLogo(MenuLibVideoOpen, true);
                 MenuLibraryRow2.Height = new System.Windows.GridLength(60.0);
+                isVideoExpand = true;
             }
             else
             {
+                isVideoExpand = false;
                 changeExpandLogo(MenuLibVideoOpen, false);
                 MenuLibraryRow2.Height = new System.Windows.GridLength(20.0);
             }
@@ -75,13 +86,15 @@ namespace WMPv2
 
         void ExpandImage(object sender, EventArgs e)
         {
-            if (MenuLibraryRow3.ActualHeight < 21)
+            if (!isImageExpand)
             {
                 changeExpandLogo(MenuLibImageOpen, true);
                 MenuLibraryRow3.Height = new System.Windows.GridLength(60.0);
+                isImageExpand = true;
             }
             else
             {
+                isImageExpand = false;
                 changeExpandLogo(MenuLibImageOpen, false);
                 MenuLibraryRow3.Height = new System.Windows.GridLength(20.0);
             }
@@ -165,9 +178,17 @@ namespace WMPv2
 
         #endregion
 
+
         void AddLibPlaylist(object sender, EventArgs e)
         {
+            string name = "New...";
 
+            if (isPlaylistExpand)
+                ExpandPlaylist(new object(), new EventArgs());
+            Locator.WMPLocator.MainStaticListPlaylists._Names.Add(name);
+            PlaylistBox.ItemsSource = null;
+            PlaylistBox.ItemsSource = Locator.WMPLocator.MainStaticListPlaylists._Names;
+            ExpandPlaylist(new object(), new EventArgs());
         }
     }
 }

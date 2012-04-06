@@ -84,8 +84,8 @@
                             <TextBlock x:Name="MenuLibPlaylistText" Text="Playlists" Margin="2, 0, 0, 0" />
                         </StackPanel>
                         <Grid x:Name="MenuLibPlaylistButton" Margin="17,0,0,0" Background="#00000000" MouseDown="ShowLibraryPlaylist" Width="150" HorizontalAlignment="Left"/>
-                        <TextBlock x:Name="AddLibPlaylistButton" HorizontalAlignment="Right" TextWrapping="Wrap" Text=" Créer" Margin="0,0,0,4.04" VerticalAlignment="Top" Height="20" Width="33"
-                                   MouseDown="AddLibPlaylist"/>
+                        <Image x:Name="AddLibPlaylistButton" HorizontalAlignment="Right" Width="33" VerticalAlignment="Top" Height="20" Source="Images/AddLibPlaylist.png" Margin="0"
+                               MouseDown="AddLibPlaylist"/>
                         <ListBox x:Name="PlaylistBox" Margin="0,20,0,0" IsSynchronizedWithCurrentItem="False">
                             <ListBox.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
