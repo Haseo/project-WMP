@@ -186,16 +186,16 @@
     			</Border>
     			<GridSplitter x:Name="PannelDrag" HorizontalAlignment="Left" Width="2" Background="#FF3D3D3D" DragDelta="SetPannelSize" Margin="0" BorderThickness="0" />
     		</Grid>
-            <Grid x:Name="SwapLibraryGrid" HorizontalAlignment="Left" Height="100" VerticalAlignment="Center" Width="24" MouseEnter="ShowSwapLibrary" MouseLeave="HideSwapLibrary" Opacity="0" Background="#00272727">
-    			<Image x:Name="SwapLibraryButton" Width="20" Margin="0" Height="95" Source="Images/SwapLibrary.png"
-    				MouseDown="ShowLibrary" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Grid x:Name="SwapLibraryGrid" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="120" MouseEnter="ShowSwapLibrary" MouseLeave="HideSwapLibrary" Opacity="0" Background="#00272727" Margin="0,2,0,0">
+    			<Image x:Name="SwapLibraryButton" Margin="0,0,0,1" Source="Images/SwapLibrary.png"
+    				MouseDown="ShowLibrary" Visibility="Hidden" VerticalAlignment="Top" HorizontalAlignment="Left"/>
     		</Grid>
-            <Grid x:Name="SwapPlayGrid" HorizontalAlignment="Left" Height="100" VerticalAlignment="Center" Width="24" MouseEnter="ShowSwapPlay" MouseLeave="HideSwapPlay" Opacity="0" Background="#00272727" Visibility="Hidden" >
-    			<Image x:Name="SwapPlayButton" Width="20" Margin="0" Height="95" Source="Images/SwapPlay.png"
-    				MouseDown="ShowPlay" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Grid x:Name="SwapPlayGrid" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="120" MouseEnter="ShowSwapPlay" MouseLeave="HideSwapPlay" Opacity="0" Background="#00272727" Visibility="Hidden" Margin="0,2,0,0" >
+    			<Image x:Name="SwapPlayButton" Margin="0,0,0,1" Source="Images/SwapPlay.png"
+    				MouseDown="ShowPlay" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     		</Grid>
     	</Grid>
-    	<Grid x:Name="CommandGrid" Height="30" VerticalAlignment="Bottom" Background="#FF212121" Margin="0">
+    	<Grid x:Name="CommandGrid" Height="30" VerticalAlignment="Bottom" Background="#FF212121" Margin="0" MouseEnter="ShowMediaControl" MouseLeave="HideMediaControl">
     		<Image x:Name="PlayButton" Source="Images\Play.png" HorizontalAlignment="Left" Width="22" Margin="4,4,0,4" Height="22"
                    MouseDown="Play" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
     		<Image x:Name="StopButton" Source="Images/Stop.png" HorizontalAlignment="Left" Width="22" Margin="31,4,0,4" Height="22"
@@ -208,7 +208,6 @@
                     ValueChanged="ChangeMediaVolume" />
     		<Image x:Name="FullScreenButton" Source="Images/FullScreen.png" HorizontalAlignment="Right" Width="22" Margin="0,4,4,4" Height="22"
                    MouseDown="ChangeScreen" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
-    	</Grid>
-        
+    	</Grid>        
     </Grid>
 </Window>

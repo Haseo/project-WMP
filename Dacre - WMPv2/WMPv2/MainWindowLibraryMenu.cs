@@ -28,10 +28,13 @@ namespace WMPv2
         #region Expand
         void ExpandPlaylist(object sender, EventArgs e)
         {
-            if (MenuLibraryRow0.ActualHeight < 30)
+            if (MenuLibraryRow0.ActualHeight < 21)
             {
+                double size;
+
+                size = Locator.WMPLocator.MainStaticListPlaylists._Names.Count * 28;
                 changeExpandLogo(MenuLibPlaylistOpen, true);
-                MenuLibraryRow0.Height = new System.Windows.GridLength(60.0);
+                MenuLibraryRow0.Height = new System.Windows.GridLength(size);
             }
             else
             {
@@ -42,7 +45,7 @@ namespace WMPv2
 
         void ExpandMusique(object sender, EventArgs e)
         {
-            if (MenuLibraryRow1.ActualHeight < 30)
+            if (MenuLibraryRow1.ActualHeight < 21)
             {
                 changeExpandLogo(MenuLibMusiqueOpen, true);
                 MenuLibraryRow1.Height = new System.Windows.GridLength(60.0);
@@ -56,7 +59,7 @@ namespace WMPv2
 
         void ExpandVideo(object sender, EventArgs e)
         {
-            if (MenuLibraryRow2.ActualHeight < 30)
+            if (MenuLibraryRow2.ActualHeight < 21)
             {
                 changeExpandLogo(MenuLibVideoOpen, true);
                 MenuLibraryRow2.Height = new System.Windows.GridLength(60.0);
@@ -70,7 +73,7 @@ namespace WMPv2
 
         void ExpandImage(object sender, EventArgs e)
         {
-            if (MenuLibraryRow3.ActualHeight < 30)
+            if (MenuLibraryRow3.ActualHeight < 21)
             {
                 changeExpandLogo(MenuLibImageOpen, true);
                 MenuLibraryRow3.Height = new System.Windows.GridLength(60.0);

@@ -183,6 +183,7 @@ namespace WMPv2
                 this.WindowState = WindowState.Maximized;
                 CommandGrid.Opacity = 0;
                 PlayGrid.Margin = new System.Windows.Thickness(0, 22, 0, 0);
+                ActiveGrid.Margin = new System.Windows.Thickness(0, 30, 0, 0);
             }
             else
             {
@@ -193,6 +194,7 @@ namespace WMPv2
                 this.WindowState = WindowState.Normal;
                 CommandGrid.Opacity = 100;
                 PlayGrid.Margin = new System.Windows.Thickness(0, 22, 0, 30);
+                ActiveGrid.Margin = new System.Windows.Thickness(0, 30, 0, 28);
                 if (isPannelShow)
                 {
                     panelSize = 225.0;
