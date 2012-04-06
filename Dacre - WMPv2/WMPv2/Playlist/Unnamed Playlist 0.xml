@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<MediaPlaylist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <_Image_s>Images\AlbumImage.png</_Image_s>
+  <_Name_s>Unnamed Playlist 0</_Name_s>
+  <_Playlist>
+    <string>C:\Users\Public\Videos\Sample Videos\Wildlife.wmv</string>
+    <string>C:\Users\Dacre\Downloads\01 - Bug in A Web.mp3</string>
+  </_Playlist>
+</MediaPlaylist>
