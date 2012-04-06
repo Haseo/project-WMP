@@ -83,6 +83,7 @@ namespace WMPv2
             logo.EndInit();
             PlaylistImage.Source = logo;
             PannelPlaylistName.Text = Locator.WMPLocator.MainStaticListPlaylists._Current._Name_s;
+            PannelPlaylistList.ItemsSource = null;
             PannelPlaylistList.ItemsSource = Locator.WMPLocator.MainStaticListPlaylists._Current._Playlist;
         }
     }

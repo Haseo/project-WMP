@@ -164,5 +164,10 @@ namespace WMPv2
         }
 
         #endregion
+
+        void AddLibPlaylist(object sender, EventArgs e)
+        {
+
+        }
     }
 }

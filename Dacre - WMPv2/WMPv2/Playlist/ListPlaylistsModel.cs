@@ -65,10 +65,13 @@ namespace WMPv2
 
             if (playlistname.Length > 0)
             {
+                count = playlistname.IndexOf("\\Playlist\\");
+                if (count == -1)
+                    playlistname = "../../Playlist/" + playlistname;
                 count = playlistname.IndexOf(".xml");
                 if (count == -1)
                     playlistname = playlistname + ".xml";
-                using (FileStream fs = new FileStream("../../Playlist/" + playlistname, FileMode.Open))
+                using (FileStream fs = new FileStream(playlistname, FileMode.Open))
                 {
                     XmlSerializer xml = new XmlSerializer(typeof(MediaPlaylist));
 
