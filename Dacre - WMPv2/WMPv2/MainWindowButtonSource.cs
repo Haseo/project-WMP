@@ -20,30 +20,6 @@ namespace WMPv2
             SeekBar.Visibility = System.Windows.Visibility.Collapsed;
         }
 
-        private void ShowSwapLibrary(object sender, EventArgs e)
-        {
-            SwapLibraryGrid.Opacity = 100;
-            SwapLibraryButton.Visibility = System.Windows.Visibility.Visible;
-        }
-
-        private void HideSwapLibrary(object sender, EventArgs e)
-        {
-            SwapLibraryGrid.Opacity = 0;
-            SwapLibraryButton.Visibility = System.Windows.Visibility.Hidden;
-        }
-
-        private void ShowSwapPlay(object sender, EventArgs e)
-        {
-            SwapPlayGrid.Opacity = 100;
-            SwapPlayButton.Visibility = System.Windows.Visibility.Visible;
-        }
-
-        private void HideSwapPlay(object sender, EventArgs e)
-        {
-            SwapPlayGrid.Opacity = 0;
-            SwapPlayButton.Visibility = System.Windows.Visibility.Hidden;
-        }
-
         private void ShowMediaControl(object sender, EventArgs e)
         {
             if (this.WindowState == WindowState.Maximized)
@@ -58,16 +34,16 @@ namespace WMPv2
 
         private void ShowLibrary(object sender, EventArgs e)
         {
-            SwapPlayGrid.Visibility = System.Windows.Visibility.Visible;
-            SwapLibraryGrid.Visibility = System.Windows.Visibility.Hidden;
+            SwapPlayButton.Visibility = System.Windows.Visibility.Visible;
+            SwapLibraryButton.Visibility = System.Windows.Visibility.Hidden;
             MediaGrid.Visibility = System.Windows.Visibility.Hidden;
             LibraryGrid.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void ShowPlay(object sender, EventArgs e)
         {
-            SwapPlayGrid.Visibility = System.Windows.Visibility.Hidden;
-            SwapLibraryGrid.Visibility = System.Windows.Visibility.Visible;
+            SwapPlayButton.Visibility = System.Windows.Visibility.Hidden;
+            SwapLibraryButton.Visibility = System.Windows.Visibility.Visible;
             MediaGrid.Visibility = System.Windows.Visibility.Visible;
             LibraryGrid.Visibility = System.Windows.Visibility.Hidden;
         }

@@ -56,6 +56,10 @@
                     <MenuItem Header="_About" Click="About" Background="#FF333333"/>
                 </MenuItem>
             </Menu>
+            <Image x:Name="SwapLibraryButton" Source="Images/SwapLibrary.png"
+            	MouseDown="ShowLibrary" Height="18" Margin="0,5,30,5" HorizontalAlignment="Right"/>
+            <Image x:Name="SwapPlayButton" Margin="0,5,30,5" Source="Images/SwapPlay.png"
+            	MouseDown="ShowPlay" Visibility="Hidden" HorizontalAlignment="Right" Height="18"/>
             <Image x:Name="ShowPannelButton" Source="Images/ShowPannel.png" Width="14" Margin="0,4,4,4" Height="14" HorizontalAlignment="Right"
                    MouseDown="ShowPannel" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
     	</Grid>
@@ -181,14 +185,6 @@
                     </Grid>
     			</Border>
     			<GridSplitter x:Name="PannelDrag" HorizontalAlignment="Left" Width="2" Background="#FF3D3D3D" DragDelta="SetPannelSize" Margin="0" BorderThickness="0" />
-    		</Grid>
-            <Grid x:Name="SwapLibraryGrid" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="120" MouseEnter="ShowSwapLibrary" MouseLeave="HideSwapLibrary" Opacity="0" Background="#00272727" Margin="0,2,0,0">
-    			<Image x:Name="SwapLibraryButton" Margin="0,0,0,1" Source="Images/SwapLibrary.png"
-    				MouseDown="ShowLibrary" Visibility="Hidden" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-    		</Grid>
-            <Grid x:Name="SwapPlayGrid" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="120" MouseEnter="ShowSwapPlay" MouseLeave="HideSwapPlay" Opacity="0" Background="#00272727" Visibility="Hidden" Margin="0,2,0,0" >
-    			<Image x:Name="SwapPlayButton" Margin="0,0,0,1" Source="Images/SwapPlay.png"
-    				MouseDown="ShowPlay" Visibility="Hidden" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     		</Grid>
     	</Grid>
     	<Grid x:Name="CommandGrid" Height="30" VerticalAlignment="Bottom" Background="#FF212121" Margin="0" MouseEnter="ShowMediaControl" MouseLeave="HideMediaControl">
