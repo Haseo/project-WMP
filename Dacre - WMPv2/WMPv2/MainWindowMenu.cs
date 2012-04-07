@@ -66,7 +66,8 @@ namespace WMPv2
 
             this.ShowPannelButton.Source = logo;
             PannelGrid.Width = spliterWidth.Value;
-            MediaBorder.Margin = new System.Windows.Thickness(0, 0, spliterWidth.Value, 0);
+            MediaGrid.Margin = new System.Windows.Thickness(0, 0, spliterWidth.Value, 0);
+            LibraryGrid.Margin = new System.Windows.Thickness(0, 0, spliterWidth.Value, 0);
             PannelDrag.Margin = new System.Windows.Thickness(0, 0, spliterWidth.Value - 2, 0);
         }
 
@@ -76,7 +77,8 @@ namespace WMPv2
 
             if (panelSize >= 150.0 && panelSize < ((PlayerWindow.Width / 10) * 6))
             {
-                MediaBorder.Margin = new System.Windows.Thickness(0, 0, panelSize, 0);
+                MediaGrid.Margin = new System.Windows.Thickness(0, 0, panelSize, 0);
+                LibraryGrid.Margin = new System.Windows.Thickness(0, 0, panelSize, 0);
                 PannelDrag.Margin = new System.Windows.Thickness(0, 0, panelSize - 2, 0);
                 spliterWidth = new GridLength(PannelDrag.Margin.Right);
                 PannelGrid.Width = panelSize;
