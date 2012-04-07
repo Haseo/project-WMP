@@ -198,7 +198,7 @@
     		<Image x:Name="VolumeButton" Source="Images/SoundOn.png" HorizontalAlignment="Right" Width="22" Margin="0,4,96,4" Height="22"
                    MouseDown="SwapVolume" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
     		<Slider x:Name="VolumeSlider" Margin="0,4,30,4" d:LayoutOverrides="Height" HorizontalAlignment="Right" Width="62"
-                    ValueChanged="ChangeMediaVolume" />
+                    ValueChanged="ChangeMediaVolume" Value="50" Maximum="100" Minimum="0"/>
     		<Image x:Name="FullScreenButton" Source="Images/FullScreen.png" HorizontalAlignment="Right" Width="22" Margin="0,4,4,4" Height="22"
                    MouseDown="ChangeScreen" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
     	</Grid>        
