@@ -65,12 +65,13 @@
     	</Grid>
     	<Grid x:Name="ActiveGrid" Margin="0,28,0,30">
     		<Grid x:Name="MediaGrid" Margin="0" Background="#FF272727" Visibility="Hidden">
-    			<Border x:Name="MediaBorder" BorderBrush="#FF3D3D3D" BorderThickness="0,2" CornerRadius="1" Margin="0">
+    			<Border x:Name="MediaBorder" BorderBrush="#FF3D3D3D" BorderThickness="0,2" CornerRadius="1" Margin="0" >
     				<Grid x:Name="PlayGrid">
     					<MediaElement x:Name="MediaPlayer" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" LoadedBehavior="Manual" />
                         <Image x:Name="ImagePlayer" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"/>
     				</Grid>
     			</Border>
+                <Image x:Name="DoubleClickImageMedia" OpacityMask="#00000000"/>
     		</Grid>
     		<Grid x:Name="LibraryGrid" Margin="0" Background="#FF414141">
     			<Grid x:Name="MenuLibraryGrid" HorizontalAlignment="Left" Width="200" Background="#FF212121">
@@ -192,8 +193,8 @@
                    MouseDown="Play" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
     		<Image x:Name="StopButton" Source="Images/Stop.png" HorizontalAlignment="Left" Width="22" Margin="31,4,0,4" Height="22"
                    MouseDown="Stop" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
-    		<Slider x:Name="SeekBar" Margin="141,4,131,4" d:LayoutOverrides="Height"
-                    MouseLeftButtonDown="DragComplete"/>
+    		<Slider x:Name="SeekBar" Margin="141,4,131,4" d:LayoutOverrides="Height" IsMoveToPointEnabled="True"
+                    PreviewMouseLeftButtonDown="DragStart" PreviewMouseLeftButtonUp="DragComplete" MouseLeftButtonDown="DragStart"/>
     		<TextBlock x:Name="MediaTimeDisp" HorizontalAlignment="Left" Width="67" Margin="70,8,0,7" Foreground="#FFE7E7E7" />
     		<Image x:Name="VolumeButton" Source="Images/SoundOn.png" HorizontalAlignment="Right" Width="22" Margin="0,4,96,4" Height="22"
                    MouseDown="SwapVolume" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>

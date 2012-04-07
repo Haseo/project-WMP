@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using Microsoft.Win32;
+using System.Windows.Input;
 
 namespace WMPv2
 {
@@ -274,14 +275,16 @@ namespace WMPv2
             calcMediaTime();
         }
 
-        private void DragStart(object sender, EventArgs e)
+        private void DragStart(object sender, MouseEventArgs e)
         {
-            Play(sender, new RoutedEventArgs());
+            _timer.Stop();
         }
 
         private void DragComplete(object sender, EventArgs e)
         {
             MediaPlayer.Position = TimeSpan.FromSeconds(SeekBar.Value);
+            _timer.Start();
+//            Play(sender, new RoutedEventArgs());
         }
 
     }
