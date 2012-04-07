@@ -10,16 +10,6 @@ namespace WMPv2
     public partial class MainWindow : Window
     {
 
-        private void ShowSlider(object sender, EventArgs e)
-        {
-            SeekBar.Visibility = System.Windows.Visibility.Visible;
-        }
-
-        private void HideSlider(object sender, EventArgs e)
-        {
-            SeekBar.Visibility = System.Windows.Visibility.Collapsed;
-        }
-
         private void ShowMediaControl(object sender, EventArgs e)
         {
             if (this.WindowState == WindowState.Maximized)

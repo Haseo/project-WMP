@@ -192,7 +192,8 @@
                    MouseDown="Play" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
     		<Image x:Name="StopButton" Source="Images/Stop.png" HorizontalAlignment="Left" Width="22" Margin="31,4,0,4" Height="22"
                    MouseDown="Stop" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
-    		<Slider x:Name="SeekBar" Margin="141,4,131,4" d:LayoutOverrides="Height"/>
+    		<Slider x:Name="SeekBar" Margin="141,4,131,4" d:LayoutOverrides="Height"
+                    MouseLeftButtonDown="DragComplete"/>
     		<TextBlock x:Name="MediaTimeDisp" HorizontalAlignment="Left" Width="67" Margin="70,8,0,7"/>
     		<Image x:Name="VolumeButton" Source="Images/SoundOn.png" HorizontalAlignment="Right" Width="22" Margin="0,4,96,4" Height="22"
                    MouseDown="SwapVolume" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>

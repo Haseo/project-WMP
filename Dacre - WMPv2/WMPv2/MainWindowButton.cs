@@ -164,8 +164,8 @@ namespace WMPv2
                     this.ImagePlayer.Source = logo;
                     ShowImage(new object(), new EventArgs());
                 }
-                Locator.WMPLocator.MainStaticListPlaylists._Current._Playlist.Add(openwin.FileName);
-                UpdatePannelPlaylist();
+                if (isPause)
+                    Play(new object(), new RoutedEventArgs());
             }
         }
         
@@ -276,13 +276,12 @@ namespace WMPv2
 
         private void DragStart(object sender, EventArgs e)
         {
-            _timer.Stop();
+            Play(sender, new RoutedEventArgs());
         }
 
         private void DragComplete(object sender, EventArgs e)
         {
             MediaPlayer.Position = TimeSpan.FromSeconds(SeekBar.Value);
-            _timer.Start();
         }
 
     }
