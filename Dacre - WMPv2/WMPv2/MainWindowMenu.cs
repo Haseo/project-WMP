@@ -100,7 +100,68 @@ namespace WMPv2
 
         private void ChangeStyle(object sender, EventArgs e)
         {
-            new ChangeStyleWin(_Style) {}.Show();
+           ChangeStyleWin style_win = new ChangeStyleWin();
+
+           style_win.End_window += new EventHandler<EventArgs>(apply_style);
+           style_win.Show();
+        }
+
+        public void apply_style(object sender, EventArgs value)
+        {
+            MenuGrid.BeginInit();
+            CommandGrid.BeginInit();
+            MenuLibraryGrid.BeginInit();
+            PannelGrid.BeginInit();
+            PannelDrag.BeginInit();
+            PlaylistNameGrid.BeginInit();
+            PlaylistNameBorder.BeginInit();
+            PannelPlaylistList.BeginInit();
+            PannelPlaylistName.BeginInit();
+            MenuFile.BeginInit();
+            MenuWindow.BeginInit();
+            MenuStyle.BeginInit();
+            MenuHelp.BeginInit();
+            MenuLibPlaylistText.BeginInit();
+            MenuLibMusiqueText.BeginInit();
+            MenuLibVideoText.BeginInit();
+            MenuLibImageText.BeginInit();
+
+            MenuGrid.Background = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._MenuBackground) as SolidColorBrush;
+            CommandGrid.Background = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._MenuBackground) as SolidColorBrush;
+            MenuLibraryGrid.Background = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._PannelBackground) as SolidColorBrush;
+            PannelGrid.Background = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._PannelBackground) as SolidColorBrush;
+            PannelDrag.Background = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._MenuBackground) as SolidColorBrush;
+            PlaylistNameGrid.Background = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._PannelBackground) as SolidColorBrush;
+            PlaylistNameBorder.BorderBrush = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._MenuBackground) as SolidColorBrush;
+            PannelPlaylistList.Background = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._PannelBackground) as SolidColorBrush;
+            PannelPlaylistList.Foreground = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._PannelForeground) as SolidColorBrush;
+            PannelPlaylistName.Foreground = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._PannelForeground) as SolidColorBrush;
+            MenuFile.Foreground = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._MenuForeground) as SolidColorBrush;
+            MenuWindow.Foreground = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._MenuForeground) as SolidColorBrush;
+            MenuStyle.Foreground = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._MenuForeground) as SolidColorBrush;
+            MenuHelp.Foreground = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._MenuForeground) as SolidColorBrush;
+            MenuLibPlaylistText.Foreground = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._LibraryForeground) as SolidColorBrush;
+            MenuLibMusiqueText.Foreground = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._LibraryForeground) as SolidColorBrush;
+            MenuLibVideoText.Foreground = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._LibraryForeground) as SolidColorBrush;
+            MenuLibImageText.Foreground = new BrushConverter().ConvertFromString(Locator.WMPLocator.MainStaticStyle._ColorStyle._LibraryForeground) as SolidColorBrush;
+
+            MenuGrid.EndInit();
+            CommandGrid.EndInit();
+            MenuLibraryGrid.EndInit();
+            PannelGrid.EndInit();
+            PannelDrag.EndInit();
+            PlaylistNameGrid.EndInit();
+            PlaylistNameBorder.EndInit();
+            PannelPlaylistList.EndInit();
+            PannelPlaylistName.EndInit();
+            MenuFile.EndInit();
+            MenuWindow.EndInit();
+            MenuStyle.EndInit();
+            MenuHelp.EndInit();
+            MenuLibPlaylistText.EndInit();
+            MenuLibMusiqueText.EndInit();
+            MenuLibVideoText.EndInit();
+            MenuLibImageText.EndInit();
         }
 
         private void About(object sender, EventArgs e)

@@ -12,7 +12,7 @@ namespace WMPv2.Locator
     {
         private static ListPlaylistsModel _mainListPlaylists;
         private static MediaPlaylistModel _mainPlaylist;
-        private static ColorStyle _mainStyle;
+        private static ColorStyleModel _mainStyle;
 
         /// <summary>
         /// Initializes a new instance of the ViewModelLocator class.
@@ -112,7 +112,7 @@ namespace WMPv2.Locator
         #endregion
 
         #region Style
-        public static ColorStyle MainStaticStyle
+        public static ColorStyleModel MainStaticStyle
         {
             get
             {
@@ -128,7 +128,7 @@ namespace WMPv2.Locator
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance",
             "CA1822:MarkMembersAsStatic",
             Justification = "This non-static member is needed for data binding purposes.")]
-        public ColorStyle MainStyle
+        public ColorStyleModel MainStyle
         {
             get
             {
@@ -140,7 +140,7 @@ namespace WMPv2.Locator
         {
             if (_mainStyle == null)
             {
-                _mainStyle = new ColorStyle();
+                _mainStyle = new ColorStyleModel();
             }
         } 
         #endregion

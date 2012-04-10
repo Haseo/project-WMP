@@ -83,6 +83,7 @@
     <Compile Include="Playlist\ListPlaylistsModel.cs" />
     <Compile Include="Playlist\MediaPlaylistModel.cs" />
     <Compile Include="Style\ColorStyle.cs" />
+    <Compile Include="Style\ColorStyleModel.cs" />
     <Page Include="AboutWin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

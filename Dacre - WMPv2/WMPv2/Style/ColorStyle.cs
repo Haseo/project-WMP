@@ -15,9 +15,16 @@ using GalaSoft.MvvmLight;
 
 namespace WMPv2
 {
+    [Serializable]
     public class ColorStyle : ViewModelBase
     {
-        public string _MenuBackgroundColor;
+        public string _MenuBackground { get; set; }
+        public string _MenuForeground { get; set; }
+        public string _PannelBackground { get; set; }
+        public string _PannelForeground { get; set; }
+        public string _LibraryBackground { get; set; }
+        public string _LibraryForeground { get; set; }
+
         //{
         //    get { return _MenuBackgroundColor; }
         //    set {
@@ -25,11 +32,17 @@ namespace WMPv2
         //        _MenuBackgroundBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_MenuBackgroundColor));
         //        }
         //}
-        public Brush _MenuBackgroundBrush;
+        //public Brush _MenuBackgroundBrush;
 
         public ColorStyle()
         {
-            _MenuBackgroundColor = "#FF1A1A1A";
+            _MenuBackground = "#FF1A1A1A";
+            _MenuForeground = "#FF707070";
+            _PannelBackground = "#FF212121";
+            _PannelForeground = "#FFA7A7A7";
+            _LibraryBackground = "#FFB8B8B8";
+            _LibraryForeground = "#FF212121";
         }
+
     }
 }

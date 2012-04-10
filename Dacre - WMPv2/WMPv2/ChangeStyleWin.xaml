@@ -3,25 +3,79 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:wpfx="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WMPv2.ChangeStyleWin"
-        Title="Style Editor" Height="300" Width="300">
+        Title="Style Editor" Height="330" Width="200">
 	<Window.Resources>
         <Color x:Key="MenuBackGroundColor">#FF1A1A1A</Color>
 	</Window.Resources>
     <Grid x:Name="StyleAllGrid">
-        <Border x:Name="VideoBorder" BorderBrush="#FF373737" BorderThickness="2" OpacityMask="Black" Background="#FF474747" Margin="0" CornerRadius="2">
-        	<Grid x:Name="StyleMenuBackground" Height="40" VerticalAlignment="Top" Margin="0,0,118,0">
-        		<ComboBox x:Name="PickerMenuBackground" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Width="18" RenderTransformOrigin="-2.533,0.375">
-        			<wpfx:ColorCanvas x:Name="CanvasMenuBackground" SelectedColorChanged="SetMenuBackground" />
-        		</ComboBox>
-        		<TextBlock x:Name="TitleMenuBackground" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"><Run Language="fr-fr" Text="Menu Background"/></TextBlock>
-        		<Rectangle x:Name="ColorDisplayMenuBackground" Stroke="Black" Margin="0,8,22,8" HorizontalAlignment="Right" Width="24" Height="24">
-        			<Rectangle.Fill>
-                        <SolidColorBrush x:Name="MenuBackgroundRect" Color="{Binding SelectedColor, ElementName=CanvasMenuBackground}"/>
-        			</Rectangle.Fill>
-        		</Rectangle>
-        	</Grid>
-        </Border>
-        <Button Name="OkButton" Content="Ok" HorizontalAlignment="Right" Width="59" VerticalAlignment="Bottom" Margin="0,0,80,8" Click="OkButton_Click" />
+        <Border x:Name="VideoBorder" BorderBrush="#FF373737" BorderThickness="2" OpacityMask="Black" Background="#FF474747" Margin="0" CornerRadius="2"/>
+        <Button Name="OkButton" Content="Ok" HorizontalAlignment="Left" Width="59" VerticalAlignment="Bottom" Margin="8,0,0,8" Click="OkButton_Click" />
         <Button Name="CancelButton" Content="Annuler" HorizontalAlignment="Right" Width="59" VerticalAlignment="Bottom" Margin="0,0,8,8" Click="CancelButton_Click" />
+        <Grid x:Name="StyleMenuBackground" Height="40" VerticalAlignment="Top" Margin="4,2,4,0">
+        	<ComboBox x:Name="PickerMenuBackground" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Width="18" RenderTransformOrigin="-2.533,0.375">
+        		<wpfx:ColorCanvas x:Name="CanvasMenuBackground" SelectedColorChanged="SetMenuBackground" />
+        	</ComboBox>
+        	<TextBlock x:Name="TitleMenuBackground" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"><Run Language="fr-fr" Text="Menu Background"/></TextBlock>
+        	<Rectangle x:Name="ColorDisplayMenuBackground" Stroke="Black" Margin="0,8,22,8" HorizontalAlignment="Right" Width="24" Height="24">
+        		<Rectangle.Fill>
+        			<SolidColorBrush x:Name="MenuBackgroundRect" Color="{Binding SelectedColor, ElementName=CanvasMenuBackground}"/>
+        		</Rectangle.Fill>
+        	</Rectangle>
+        </Grid>
+        <Grid x:Name="StyleMenuForeground" Height="40" VerticalAlignment="Top" Margin="4,44,4,0">
+        	<ComboBox x:Name="PickerMenuForeground" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Width="18" RenderTransformOrigin="-2.533,0.375">
+        		<wpfx:ColorCanvas x:Name="CanvasMenuForeground" SelectedColorChanged="SetMenuForeground" />
+        	</ComboBox>
+        	<TextBlock x:Name="TitleMenuForeground" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Text="Menu Foreground"/>
+        	<Rectangle x:Name="ColorDisplayMenuForeground" Stroke="Black" Margin="0,8,22,8" HorizontalAlignment="Right" Width="24" Height="24">
+        		<Rectangle.Fill>
+        			<SolidColorBrush x:Name="MenuForegroundRect" Color="{Binding SelectedColor, ElementName=CanvasMenuForeground}"/>
+        		</Rectangle.Fill>
+        	</Rectangle>
+        </Grid>
+        <Grid x:Name="StylePannelBackground" Height="40" VerticalAlignment="Top" Margin="4,86,4,0">
+            <ComboBox x:Name="PickerPannelBackground" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Width="18" RenderTransformOrigin="-2.533,0.375">
+                <wpfx:ColorCanvas x:Name="CanvasPannelBackground" SelectedColorChanged="SetPannelBackground" />
+            </ComboBox>
+            <TextBlock x:Name="TitlePannelBackground" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"><Run Language="fr-fr" Text="Pannel Background"/></TextBlock>
+            <Rectangle x:Name="ColorDisplayPannelBackground" Stroke="Black" Margin="0,8,22,8" HorizontalAlignment="Right" Width="24" Height="24">
+                <Rectangle.Fill>
+                    <SolidColorBrush x:Name="PannelBackgroundRect" Color="{Binding SelectedColor, ElementName=CanvasPannelBackground}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+        <Grid x:Name="StylePannelForeground" Height="40" VerticalAlignment="Top" Margin="4,128,4,0">
+            <ComboBox x:Name="PickerPannelForeground" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Width="18" RenderTransformOrigin="-2.533,0.375">
+                <wpfx:ColorCanvas x:Name="CanvasPannelForeground" SelectedColorChanged="SetPannelForeground" />
+            </ComboBox>
+            <TextBlock x:Name="TitlePannelForeground" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"><Run Language="fr-fr" Text="Pannel Foreground"/></TextBlock>
+            <Rectangle x:Name="ColorDisplayPannelForeground" Stroke="Black" Margin="0,8,22,8" HorizontalAlignment="Right" Width="24" Height="24">
+                <Rectangle.Fill>
+                    <SolidColorBrush x:Name="PannelForegroundRect" Color="{Binding SelectedColor, ElementName=CanvasPannelForeground}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+        <Grid x:Name="StyleLibraryBackground" Height="40" VerticalAlignment="Top" Margin="4,170,4,0">
+            <ComboBox x:Name="PickerLibraryBackground" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Width="18" RenderTransformOrigin="-2.533,0.375">
+                <wpfx:ColorCanvas x:Name="CanvasLibraryBackground" SelectedColorChanged="SetLibraryBackground" />
+            </ComboBox>
+            <TextBlock x:Name="TitleLibraryBackground" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"><Run Language="fr-fr" Text="Library Background"/></TextBlock>
+            <Rectangle x:Name="ColorDisplayLibraryBackground" Stroke="Black" Margin="0,8,22,8" HorizontalAlignment="Right" Width="24" Height="24">
+                <Rectangle.Fill>
+                    <SolidColorBrush x:Name="LibraryBackgroundRect" Color="{Binding SelectedColor, ElementName=CanvasLibraryBackground}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+        <Grid x:Name="StyleLibraryForeground" Height="40" VerticalAlignment="Top" Margin="4,212,4,0">
+            <ComboBox x:Name="PickerLibraryForeground" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Width="18" RenderTransformOrigin="-2.533,0.375">
+                <wpfx:ColorCanvas x:Name="CanvasLibraryForeground" SelectedColorChanged="SetLibraryForeground" />
+            </ComboBox>
+            <TextBlock x:Name="TitleLibraryForeground" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"><Run Language="fr-fr" Text="Library Foreground"/></TextBlock>
+            <Rectangle x:Name="ColorDisplayLibraryForeground" Stroke="Black" Margin="0,8,22,8" HorizontalAlignment="Right" Width="24" Height="24">
+                <Rectangle.Fill>
+                    <SolidColorBrush x:Name="LibraryForegroundRect" Color="{Binding SelectedColor, ElementName=CanvasLibraryForeground}"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
     </Grid>
 </Window>
