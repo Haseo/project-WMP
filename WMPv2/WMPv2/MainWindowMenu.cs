@@ -95,15 +95,15 @@ namespace WMPv2
             var scope = FocusManager.GetFocusScope(PannelPlaylistName); // elem is the UIElement to unfocus
             FocusManager.SetFocusedElement(scope, null); // remove logical focus
             Keyboard.ClearFocus();
-//            UnfocusPanel.Focus();
+            //            UnfocusPanel.Focus();
         }
 
         private void ChangeStyle(object sender, EventArgs e)
         {
-           ChangeStyleWin style_win = new ChangeStyleWin();
+            ChangeStyleWin style_win = new ChangeStyleWin();
 
-           style_win.End_window += new EventHandler<EventArgs>(apply_style);
-           style_win.Show();
+            style_win.End_window += new EventHandler<EventArgs>(apply_style);
+            style_win.Show();
         }
 
         public void apply_style(object sender, EventArgs value)

@@ -42,7 +42,9 @@ namespace WMPv2
             openwin.DefaultExt = "*.xml*";
             openwin.Filter = "XML Files (*.xml)|*.xml|All (*.*)|*.*";
             openwin.ShowDialog();
+
             //  Locator.WMPLocator.MainStaticListPlaylists.OpenPlaylistfromXML(openwin.FileName);
+            
             UpdatePannelPlaylist();
         }
 
@@ -100,10 +102,8 @@ namespace WMPv2
             logo.EndInit();
             PlaylistImage.Source = logo;
             PannelPlaylistName.Text = Locator.WMPLocator._currentName;
-            PannelPlaylistList.BeginInit();
             PannelPlaylistList.ItemsSource = null;
             PannelPlaylistList.ItemsSource = Locator.WMPLocator._currentlist;
-            PannelPlaylistList.EndInit();
         }
     }
 }

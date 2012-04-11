@@ -34,7 +34,6 @@ namespace WMPv2.Locator
             _currentlist = new List<string>();
             _currentName = "Unnamed";
             _currentImg = @"Images\AlbumImage.png";
-            _currentMedia = 0;
             CreateMainStyle();
         }
 
@@ -44,7 +43,6 @@ namespace WMPv2.Locator
             _currentlist_media.Clear();
             _currentName = "";
             _mainStyle.Cleanup();
-            _currentMedia = 0;
             _mainStyle = null;
         }
 
@@ -93,7 +91,9 @@ namespace WMPv2.Locator
             _currentName = name;
             try
             {
-                using (FileStream fs = new FileStream("../../Playlist/" + name + ".xml", FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                if (!Directory.Exists("./Playlist/"))
+                    Directory.CreateDirectory("./Playlist/");
+                using (FileStream fs = new FileStream("./Playlist/" + name + ".xml", FileMode.OpenOrCreate, FileAccess.ReadWrite))
                 {
                     try
                     {
@@ -105,6 +105,39 @@ namespace WMPv2.Locator
                         {
                             String[] stand = item._Titre.Split('\\');
 
+                            _currentlist.Add(stand.Last<string>());
+                        }
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        public static void add_play_playlist(String name)
+        {
+            try
+            {
+                if (!Directory.Exists("./Playlist/"))
+                    Directory.CreateDirectory("./Playlist/");
+                using (FileStream fs = new FileStream("./Playlist/" + name + ".xml", FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                {
+                    try
+                    {
+                        List<MediaContent> new_list = new List<MediaContent>();
+
+                        XmlSerializer xml = new XmlSerializer(new_list.GetType());
+
+                        new_list = xml.Deserialize(fs) as List<MediaContent>;
+                        foreach (MediaContent item in new_list)
+                        {
+                            String[] stand = item._Titre.Split('\\');
+
+                            _currentlist_media.Add(item);
                             _currentlist.Add(stand.Last<string>());
                         }
                     }

@@ -7,61 +7,61 @@
         xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Name="PlayerWindow" x:Class="WMPv2.MainWindow"
         Title="MainWindow" Height="450" Width="800" MouseLeftButtonDown="OnWindowClick"
         mc:Ignorable="d"  KeyDown="KeyAction" Background="#FF1D1D1D" BorderBrush="#FF333333">
-	<Window.Resources>
-		<Style x:Key="PannelPlaylistNameTemp" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
-			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-			<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
-			<Setter Property="BorderThickness" Value="1"/>
-			<Setter Property="Padding" Value="1"/>
-			<Setter Property="AllowDrop" Value="true"/>
-			<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-			<Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
-			<Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="{x:Type TextBox}">
-						<Microsoft_Windows_Themes:ListBoxChrome x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}" SnapsToDevicePixels="true">
-							<ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-						</Microsoft_Windows_Themes:ListBoxChrome>
-						<ControlTemplate.Triggers>
-							<Trigger Property="IsEnabled" Value="false"/>
-						</ControlTemplate.Triggers>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-		<ControlTemplate x:Key="LibraryMenuButtonTemplate" TargetType="{x:Type Button}">
-			<Grid x:Name="LibraryMenuButtonGrid" Background="#FF727272">
-				<TextBlock x:Name="LibraryMenuButtonText" Margin="25,0,0,0" TextWrapping="Wrap" Text="{TemplateBinding Content}" d:LayoutOverrides="Width, Height" Foreground="Black"/>
-			</Grid>
-		</ControlTemplate>
-	</Window.Resources>
-	<Window.DataContext>
-		<Binding Path="Playlist" Source="{StaticResource Locator}"/>
-	</Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="PannelPlaylistNameTemp" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Microsoft_Windows_Themes:ListBoxChrome x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" RenderMouseOver="{TemplateBinding IsMouseOver}" RenderFocused="{TemplateBinding IsKeyboardFocusWithin}" SnapsToDevicePixels="true">
+                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Microsoft_Windows_Themes:ListBoxChrome>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ControlTemplate x:Key="LibraryMenuButtonTemplate" TargetType="{x:Type Button}">
+            <Grid x:Name="LibraryMenuButtonGrid" Background="#FF727272">
+                <TextBlock x:Name="LibraryMenuButtonText" Margin="25,0,0,0" TextWrapping="Wrap" Text="{TemplateBinding Content}" d:LayoutOverrides="Width, Height" Foreground="Black"/>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
+    <Window.DataContext>
+        <Binding Path="Playlist" Source="{StaticResource Locator}"/>
+    </Window.DataContext>
     <Grid x:Name="AllGrid" DataContext="{Binding Source={StaticResource Locator}}">
         <Grid x:Name="MenuGrid" Height="28" VerticalAlignment="Top">
-        	<Grid.Background>
-        		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuBackground}"/>
-        	</Grid.Background>
+            <Grid.Background>
+                <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuBackground}"/>
+            </Grid.Background>
             <Menu x:Name="Menu" IsMainMenu="True" Background="{x:Null}">
                 <MenuItem Name="MenuFile" Header="_File" VerticalAlignment="Top" FontSize="13.333" Margin="0,2,0,0" Background="Transparent">
-                	<MenuItem.Foreground>
-                		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuForeground}"/>
-                	</MenuItem.Foreground>
+                    <MenuItem.Foreground>
+                        <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuForeground}"/>
+                    </MenuItem.Foreground>
                     <MenuItem Header="_Open" Click="Load" Background="#FF333333" />
                     <MenuItem Header="_Exit" Click="Quit" Background="#FF333333"/>
                 </MenuItem>
                 <MenuItem Name="MenuWindow" Header="_Window" FontSize="13.333" Margin="0,2,0,0">
-                	<MenuItem.Foreground>
-                		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuForeground}"/>
-                	</MenuItem.Foreground>
+                    <MenuItem.Foreground>
+                        <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuForeground}"/>
+                    </MenuItem.Foreground>
                     <MenuItem Header="_Fullscreen" Click="ChangeScreen" Background="#FF333333"/>
                 </MenuItem>
                 <MenuItem Name="MenuStyle" Header="_Style" FontSize="13.333" Margin="0,2,0,0">
-                	<MenuItem.Foreground>
-                		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuForeground}"/>
-                	</MenuItem.Foreground>
+                    <MenuItem.Foreground>
+                        <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuForeground}"/>
+                    </MenuItem.Foreground>
                     <MenuItem Header="_Editor" Click="ChangeStyle" Background="#FF333333"/>
                 </MenuItem>
                 <MenuItem Name="MenuHelp" Header="_Help" FontSize="13.333" Foreground="{Binding MainStaticStyle._ColorStyle._MenuForeground}" Margin="0,2,0,0">
@@ -74,34 +74,34 @@
             	MouseDown="ShowPlay" Visibility="Hidden" HorizontalAlignment="Right" Height="18"/>
             <Image x:Name="ShowPannelButton" Source="Images/ShowPannel.png" Width="14" Margin="0,4,4,4" Height="14" HorizontalAlignment="Right"
                    MouseDown="ShowPannel" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
-    	</Grid>
-    	<Grid x:Name="ActiveGrid" Margin="0,28,0,30">
-    		<Grid x:Name="MediaGrid" Margin="0" Background="#FF272727" Visibility="Hidden">
-    			<Border x:Name="MediaBorder" BorderBrush="#FF3D3D3D" BorderThickness="0,2" CornerRadius="1" Margin="0" >
-    				<Grid x:Name="PlayGrid">
-    					<MediaElement x:Name="MediaPlayer" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" LoadedBehavior="Manual"  MediaEnded="MediaEnd" />
+        </Grid>
+        <Grid x:Name="ActiveGrid" Margin="0,28,0,30">
+            <Grid x:Name="MediaGrid" Margin="0" Background="#FF272727" Visibility="Hidden">
+                <Border x:Name="MediaBorder" BorderBrush="#FF3D3D3D" BorderThickness="0,2" CornerRadius="1" Margin="0" >
+                    <Grid x:Name="PlayGrid">
+                        <MediaElement x:Name="MediaPlayer" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" LoadedBehavior="Manual"  MediaEnded="MediaEnd" />
                         <Image x:Name="ImagePlayer" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"/>
-    				</Grid>
-    			</Border>
+                    </Grid>
+                </Border>
                 <Image x:Name="DoubleClickImageMedia" OpacityMask="#00000000"/>
-    		</Grid>
-    		<Grid x:Name="LibraryGrid" Margin="0" Background="#FF414141">
-    			<Grid x:Name="MenuLibraryGrid" HorizontalAlignment="Left" Width="200">
-    				<Grid.Background>
-    					<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelBackground}"/>
-    				</Grid.Background>
-    				<Grid.RowDefinitions>
-    					<RowDefinition Height="24.831"/>
-    					<RowDefinition x:Name="MenuLibraryRow0" Height="20"/>
-    					<RowDefinition x:Name="MenuLibraryRow1" Height="20"/>
-    					<RowDefinition x:Name="MenuLibraryRow2" Height="20"/>
-    					<RowDefinition x:Name="MenuLibraryRow3" Height="20"/>
-    				</Grid.RowDefinitions>
-    				<Grid x:Name="Playlists" Margin="0" Grid.Row="1">
-                        <StackPanel x:Name="MenuLibPlaylists" Orientation="Horizontal" VerticalAlignment="Top" Height="20">
+            </Grid>
+            <Grid x:Name="LibraryGrid" Margin="0" Background="#FF414141">
+                <Grid x:Name="MenuLibraryGrid" HorizontalAlignment="Left" Width="200">
+                    <Grid.Background>
+                        <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelBackground}"/>
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24.831"/>
+                        <RowDefinition x:Name="MenuLibraryRow0" Height="20"/>
+                        <RowDefinition x:Name="MenuLibraryRow1" Height="20"/>
+                        <RowDefinition x:Name="MenuLibraryRow2" Height="20"/>
+                        <RowDefinition x:Name="MenuLibraryRow3" Height="20"/>
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="Playlists" Margin="0" Grid.Row="1">
+                        <StackPanel x:Name="MenuLibPlaylists" Orientation="Horizontal" VerticalAlignment="Top" Height="20" MouseLeftButtonDown="MenuLibPlaylistText_MouseDown">
                             <Image x:Name="MenuLibPlaylistOpen" Source="Images/LibraryExpand.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0" MouseDown="ExpandPlaylist"/>
-                            <Image x:Name="MenuLibPlaylistIcone" Source="Images/LogoPlaylist.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0"/>
-                            <TextBlock x:Name="MenuLibPlaylistText" Text="Playlists" Margin="2, 0, 0, 0" >
+                            <Image x:Name="MenuLibPlaylistIcone" Source="Images/LogoPlaylist.png" MouseLeftButtonDown="MenuLibPlaylistText_MouseDown" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0"/>
+                            <TextBlock x:Name="MenuLibPlaylistText" Text="Playlists" Margin="2, 0, 0, 0" MouseLeftButtonDown="MenuLibPlaylistText_MouseDown">
                             	<TextBlock.Foreground>
                             		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._LibraryForeground}"/>
                             	</TextBlock.Foreground>
@@ -120,16 +120,16 @@
                             </ListBox.ItemContainerStyle>
                         </ListBox>
                     </Grid>
-    				<Grid x:Name="Musique" Margin="0" Grid.Row="2">
-    					<StackPanel x:Name="MenuLibMusique" Orientation="Horizontal" VerticalAlignment="Top" Height="20">
+                    <Grid x:Name="Musique" Margin="0" Grid.Row="2">
+                        <StackPanel x:Name="MenuLibMusique" Orientation="Horizontal" VerticalAlignment="Top" Height="20" MouseLeftButtonDown="MenuLibMusiqueText_MouseDown">
                             <Image x:Name="MenuLibMusiqueOpen" Source="Images/LibraryExpand.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0"  MouseDown="ExpandMusique"/>
-                            <Image x:Name="MenuLibMusiqueIcone" Source="Images\LogoMusique.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0" />
-                            <TextBlock x:Name="MenuLibMusiqueText" Text="Musique" Margin="2, 0, 0, 0">
+                            <Image x:Name="MenuLibMusiqueIcone" Source="Images\LogoMusique.png" MouseLeftButtonDown="MenuLibMusiqueText_MouseDown" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0" />
+                            <TextBlock x:Name="MenuLibMusiqueText" Text="Musique" Margin="2, 0, 0, 0" MouseLeftButtonDown="MenuLibMusiqueText_MouseDown">
                             	<TextBlock.Foreground>
                             		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._LibraryForeground}"/>
                             	</TextBlock.Foreground>
                             </TextBlock>
-    					</StackPanel>
+                        </StackPanel>
                         <Grid x:Name="MenuLibMusiqueButton" Background="#00000000" Margin="17,0,0,0" MouseDown="ShowLibraryMusique"/>
                         <ListBox x:Name="MusiqueBox" Margin="0,20,0,0">
                             <ListBox.ItemContainerStyle>
@@ -140,16 +140,16 @@
                             </ListBox.ItemContainerStyle>
                         </ListBox>
                     </Grid>
-    				<Grid x:Name="Video" Margin="0" Grid.Row="3">
-    					<StackPanel x:Name="MenuLibVideo" Orientation="Horizontal" VerticalAlignment="Top" Height="20">
+                    <Grid x:Name="Video" Margin="0" Grid.Row="3">
+                        <StackPanel x:Name="MenuLibVideo" Orientation="Horizontal" VerticalAlignment="Top" Height="20" MouseLeftButtonDown="MenuLibVideoText_MouseDown">
                             <Image x:Name="MenuLibVideoOpen" Source="Images/LibraryExpand.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0"  MouseDown="ExpandVideo"/>
-                            <Image x:Name="MenuLibVideoIcone" Source="Images\LogoVideo.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0"/>
-                            <TextBlock x:Name="MenuLibVideoText" Text="Video" Margin="2, 0, 0, 0">
+                            <Image x:Name="MenuLibVideoIcone" Source="Images\LogoVideo.png" MouseLeftButtonDown="MenuLibVideoText_MouseDown" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0"/>
+                            <TextBlock x:Name="MenuLibVideoText" Text="Video" Margin="2, 0, 0, 0" MouseLeftButtonDown="MenuLibVideoText_MouseDown">
                             	<TextBlock.Foreground>
                             		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._LibraryForeground}"/>
                             	</TextBlock.Foreground>
                             </TextBlock>
-    					</StackPanel>
+                        </StackPanel>
                         <Grid x:Name="MenuLibVideoButton" Background="#00000000" Margin="17,0,0,0"  MouseDown="ShowLibraryVideo"/>
                         <ListBox x:Name="VideoBox" Margin="0,20,0,0">
                             <ListBox.ItemContainerStyle>
@@ -160,16 +160,16 @@
                             </ListBox.ItemContainerStyle>
                         </ListBox>
                     </Grid>
-    				<Grid x:Name="Image" Margin="0" Grid.Row="4">
-    					<StackPanel x:Name="MenuLibImage" Orientation="Horizontal" VerticalAlignment="Top" Height="20">
-    						<Image x:Name="MenuLibImageOpen" Source="Images/LibraryExpand.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0" MouseDown="ExpandImage"/>
-    						<Image x:Name="MenuLibImageIcone" Source="Images/Play.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0"/>
-    						<TextBlock x:Name="MenuLibImageText" Text="Image" Margin="2, 0, 0, 0" >
-    							<TextBlock.Foreground>
+                    <Grid x:Name="Image" Margin="0" Grid.Row="4">
+                        <StackPanel x:Name="MenuLibImage" Orientation="Horizontal" VerticalAlignment="Top" Height="20" MouseLeftButtonDown="MenuLibImageText_MouseDown">
+                            <Image x:Name="MenuLibImageOpen" Source="Images/LibraryExpand.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0" MouseDown="ExpandImage"/>
+                            <Image x:Name="MenuLibImageIcone" Source="Images/Play.png" MouseLeftButtonDown="MenuLibImageText_MouseDown" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0"/>
+                            <TextBlock x:Name="MenuLibImageText" Text="Image" Margin="2, 0, 0, 0" MouseLeftButtonDown="MenuLibImageText_MouseDown">
+    							<TextBlock.Foreground> 
     								<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._LibraryForeground}"/>
     							</TextBlock.Foreground>
-    						</TextBlock>
-    					</StackPanel>
+                            </TextBlock>
+                        </StackPanel>
                         <Grid x:Name="MenuLibImageButton" Background="#00000000" Margin="17,0,0,0" MouseDown="ShowLibraryImage"/>
                         <ListBox x:Name="ImageBox" Margin="0,20,0,0">
                             <ListBox.ItemContainerStyle>
@@ -180,9 +180,10 @@
                             </ListBox.ItemContainerStyle>
                         </ListBox>
                     </Grid>
-    			</Grid>
+                </Grid>
                 <DataGrid x:Name="ContentLibraryGrid" Margin="200,0,0,0" Background="#FF747474" ItemsSource="{Binding _LibraryList}" AutoGenerateColumns="False" HorizontalGridLinesBrush="{x:Null}" 
-                          VerticalGridLinesBrush="#273B3B3B" RowBackground="#00ADADAD" TargetUpdated="Library_CellEdit" TextInput="Library_CellEdit" CellEditEnding="Library_CellEdit">
+                          VerticalGridLinesBrush="#273B3B3B" RowBackground="#00ADADAD"  TargetUpdated="Library_CellEdit" TextInput="Library_CellEdit" CellEditEnding="Library_CellEdit" 
+                          MouseDoubleClick="LibraryDoubleClick">
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="Album" IsReadOnly="True" Width="80">
                             <DataGridTemplateColumn.CellTemplate>
@@ -201,38 +202,38 @@
                 </DataGrid>
             </Grid>
             <Grid x:Name="PannelGrid" Margin="0" HorizontalAlignment="Right" Width="200" >
-            	<Grid.Background>
-            		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelBackground}"/>
-            	</Grid.Background>
+                <Grid.Background>
+                    <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelBackground}"/>
+                </Grid.Background>
                 <Image x:Name="PlaylistImage" VerticalAlignment="Top" Height="120"
                        Source="{Binding MainStaticListPlaylists._Current._Image_s}" Margin="2,0,0,0" />
-    			<Grid x:Name="UnfocusGrid" Margin="-9,115,0,0" Height="30" VerticalAlignment="Top"/>
-    			<Border x:Name="PlaylistNameBorder" BorderThickness="0,2,2,2" Margin="0,120,0,0" d:LayoutOverrides="Height">
-    				<Border.BorderBrush>
-    					<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuBackground}"/>
-    				</Border.BorderBrush>
-    				<Grid x:Name="PlaylistNameGrid" Margin="2,0,0,0">
-    					<Grid.Background>
-    						<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelBackground}"/>
-    					</Grid.Background>
-    					<TextBox x:Name="PannelPlaylistName" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,0,50,0" Height="20"
+                <Grid x:Name="UnfocusGrid" Margin="-9,115,0,0" Height="30" VerticalAlignment="Top"/>
+                <Border x:Name="PlaylistNameBorder" BorderThickness="0,2,2,2" Margin="0,120,0,0" d:LayoutOverrides="Height">
+                    <Border.BorderBrush>
+                        <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuBackground}"/>
+                    </Border.BorderBrush>
+                    <Grid x:Name="PlaylistNameGrid" Margin="2,0,0,0">
+                        <Grid.Background>
+                            <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelBackground}"/>
+                        </Grid.Background>
+                        <TextBox x:Name="PannelPlaylistName" TextWrapping="Wrap" VerticalAlignment="Top" Margin="0,0,50,0" Height="20"
     						Text="{Binding currentName}" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="#FF818181"
                             TextChanged="NewPlaylistName" Style="{DynamicResource PannelPlaylistNameTemp}">
-    						<TextBox.Foreground>
-    							<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelForeground}"/>
-    						</TextBox.Foreground>
-    					</TextBox>
-    					<Image x:Name="SavePlaylistButton" Height="17" Width="17" Source="Images/Save.png" HorizontalAlignment="Right" Margin="0,2,30,0" VerticalAlignment="Top"
+                            <TextBox.Foreground>
+                                <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelForeground}"/>
+                            </TextBox.Foreground>
+                        </TextBox>
+                        <Image x:Name="SavePlaylistButton" Height="17" Width="17" Source="Images/Save.png" HorizontalAlignment="Right" Margin="0,2,30,0" VerticalAlignment="Top"
     						MouseDown="SavePlaylistClick" />
-    					<Image x:Name="LoadPlaylistButton" HorizontalAlignment="Right" Height="17" VerticalAlignment="Top" Width="17" Source="Images/Open.png" Margin="0,2,8,0"
+                        <Image x:Name="LoadPlaylistButton" HorizontalAlignment="Right" Height="17" VerticalAlignment="Top" Width="17" Source="Images/Open.png" Margin="0,2,8,0"
     						MouseDown="OpenPlaylistClick"/>
                         <ListBox x:Name="PannelPlaylistList" Margin="0,20,0,0" BorderThickness="0" ItemsSource="{Binding currentlist}">
-                        	<ListBox.Foreground>
-                        		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelForeground}"/>
-                        	</ListBox.Foreground>
-                        	<ListBox.Background>
-                        		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelBackground}"/>
-                        	</ListBox.Background>
+                            <ListBox.Foreground>
+                                <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelForeground}"/>
+                            </ListBox.Foreground>
+                            <ListBox.Background>
+                                <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelBackground}"/>
+                            </ListBox.Background>
                             <ListBox.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource {x:Type ListBoxItem}}">
                                     <EventSetter Event="MouseDoubleClick" Handler="DoubleClickPannelList"/>
@@ -240,35 +241,35 @@
                             </ListBox.ItemContainerStyle>
                         </ListBox>
                     </Grid>
-    			</Border>
-    			<GridSplitter x:Name="PannelDrag" HorizontalAlignment="Left" Width="2" DragDelta="SetPannelSize" Margin="0" BorderThickness="0" >
-    				<GridSplitter.Background>
-    					<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuBackground}"/>
-    				</GridSplitter.Background>
-    			</GridSplitter>
-    		</Grid>
-    	</Grid>
-    	<Grid x:Name="CommandGrid" Height="30" VerticalAlignment="Bottom" Margin="0" MouseEnter="ShowMediaControl" MouseLeave="HideMediaControl">
-    		<Grid.Background>
-    			<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuBackground}"/>
-    		</Grid.Background>
-    		<Image x:Name="PlayButton" Source="Images\Play.png" HorizontalAlignment="Left" Width="22" Margin="4,4,0,4" Height="22"
+                </Border>
+                <GridSplitter x:Name="PannelDrag" HorizontalAlignment="Left" Width="2" DragDelta="SetPannelSize" Margin="0" BorderThickness="0" >
+                    <GridSplitter.Background>
+                        <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuBackground}"/>
+                    </GridSplitter.Background>
+                </GridSplitter>
+            </Grid>
+        </Grid>
+        <Grid x:Name="CommandGrid" Height="30" VerticalAlignment="Bottom" Margin="0" MouseEnter="ShowMediaControl" MouseLeave="HideMediaControl">
+            <Grid.Background>
+                <SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._MenuBackground}"/>
+            </Grid.Background>
+            <Image x:Name="PlayButton" Source="Images\Play.png" HorizontalAlignment="Left" Width="22" Margin="4,4,0,4" Height="22"
                    MouseDown="Play" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
-    		<Image x:Name="StopButton" Source="Images/Stop.png" HorizontalAlignment="Left" Width="22" Margin="30,4,0,4" Height="22"
+            <Image x:Name="StopButton" Source="Images/Stop.png" HorizontalAlignment="Left" Width="22" Margin="30,4,0,4" Height="22"
                    MouseDown="Stop" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
-    		<Image x:Name="PrevButton" Source="Images/PrevMedia.png" HorizontalAlignment="Left" Width="22" Margin="56,4,0,4" Height="22"
+            <Image x:Name="PrevButton" Source="Images/PrevMedia.png" HorizontalAlignment="Left" Width="22" Margin="56,4,0,4" Height="22"
     			MouseDown="PrevMedia" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
-    		<Image x:Name="NextButton" Source="Images/NextMedia.png" HorizontalAlignment="Left" Width="22" Margin="82,4,0,4" Height="22"
+            <Image x:Name="NextButton" Source="Images/NextMedia.png" HorizontalAlignment="Left" Width="22" Margin="82,4,0,4" Height="22"
     			MouseDown="NextMedia" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
-    		<TextBlock x:Name="MediaTimeDisp" HorizontalAlignment="Left" Width="67" Margin="115,8,0,7" Foreground="#FFE7E7E7" />
-    		<Slider x:Name="SeekBar" Margin="191,4,131,4" d:LayoutOverrides="Height" IsMoveToPointEnabled="True"
+            <TextBlock x:Name="MediaTimeDisp" HorizontalAlignment="Left" Width="67" Margin="115,8,0,7" Foreground="#FFE7E7E7" />
+            <Slider x:Name="SeekBar" Margin="191,5,131,3" d:LayoutOverrides="Height" IsMoveToPointEnabled="True"
                     PreviewMouseLeftButtonDown="DragStart" PreviewMouseLeftButtonUp="DragComplete" MouseLeftButtonDown="DragStart"/>
-    		<Image x:Name="VolumeButton" Source="Images/SoundOn.png" HorizontalAlignment="Right" Width="22" Margin="0,4,96,4" Height="22"
+            <Image x:Name="VolumeButton" Source="Images/SoundOn.png" HorizontalAlignment="Right" Width="22" Margin="0,4,96,4" Height="22"
                    MouseDown="SwapVolume" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
-    		<Slider x:Name="VolumeSlider" Margin="0,4,30,4" d:LayoutOverrides="Height" HorizontalAlignment="Right" Width="62"
+            <Slider x:Name="VolumeSlider" Margin="0,4,30,4" d:LayoutOverrides="Height" HorizontalAlignment="Right" Width="62"
                     ValueChanged="ChangeMediaVolume" Value="50" Maximum="100" Minimum="0"/>
-    		<Image x:Name="FullScreenButton" Source="Images/FullScreen.png" HorizontalAlignment="Right" Width="22" Margin="0,4,4,4" Height="22"
+            <Image x:Name="FullScreenButton" Source="Images/FullScreen.png" HorizontalAlignment="Right" Width="22" Margin="0,4,4,4" Height="22"
                    MouseDown="ChangeScreen" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
-    	</Grid>        
+        </Grid>
     </Grid>
 </Window>

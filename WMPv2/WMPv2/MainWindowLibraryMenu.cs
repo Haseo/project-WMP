@@ -52,15 +52,21 @@ namespace WMPv2
                 ContentLibraryGrid.ColumnFromDisplayIndex(4).IsReadOnly = true;
                 ContentLibraryGrid.ColumnFromDisplayIndex(5).IsReadOnly = true;
                 ContentLibraryGrid.ColumnFromDisplayIndex(6).IsReadOnly = true;
+                _playlists.activate_global();
+                _playlists.load_all_playlist();
                 LibraryGrid.BeginInit();
                 LibraryGrid.DataContext = _playlists;
                 LibraryGrid.EndInit();
+                PlaylistBox.BeginInit();
+                PlaylistBox.ItemsSource = _playlists._PlaylistList;                
+                PlaylistBox.EndInit();
             }
         }
 
         void dispPlaylist()
         {
             type_disp = Type_librarydisp.playlist;
+            _playlists.desactivate_global();
             ContentLibraryGrid.ColumnFromDisplayIndex(1).IsReadOnly = false;
             ContentLibraryGrid.ColumnFromDisplayIndex(2).IsReadOnly = false;
             ContentLibraryGrid.ColumnFromDisplayIndex(4).IsReadOnly = false;
@@ -281,6 +287,7 @@ namespace WMPv2
                 PlaylistBox.ItemsSource = _playlists._PlaylistList;
                 PlaylistBox.EndInit();
                 LibraryGrid.BeginInit();
+                LibraryGrid.DataContext = _music;
                 LibraryGrid.DataContext = _playlists;
                 LibraryGrid.EndInit();
             }
@@ -337,7 +344,6 @@ namespace WMPv2
         }
 
         #endregion
-
 
         #region playlists
         private void create_playlist(String name)
@@ -404,6 +410,54 @@ namespace WMPv2
         }
 
         #endregion
+
+        private void LibraryDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                string titre = "";
+                int _selectRow = ContentLibraryGrid.SelectedIndex;
+                
+                switch (type_disp)
+                {
+                    case Type_librarydisp.all_playlist:
+                        if (_selectRow < 0 || _selectRow >= _playlists.librarylist.Count)
+                            return;
+                        Locator.WMPLocator.add_play_playlist(_playlists._PlaylistList.ElementAt(_selectRow));
+                        UpdatePannelPlaylist();
+                        return;
+                    case Type_librarydisp.playlist:
+                        if (_selectRow < 0 || _selectRow >= _playlists.librarylist.Count)
+                            return;
+                        titre = _playlists.librarylist.ElementAt(_selectRow)._Titre;
+                        break;
+                    case Type_librarydisp.all_music:
+                        if (_selectRow < 0 || _selectRow >= _music.librarylist.Count)
+                            return;
+                        titre = _music.librarylist.ElementAt(_selectRow)._Titre;
+                        _music.save_music();
+                        break;
+                    case Type_librarydisp.all_video:
+                        if (_selectRow < 0 || _selectRow >= _video.librarylist.Count)
+                            return;
+                        titre = _video.librarylist.ElementAt(_selectRow)._Titre;
+                        _video.save_video();
+                        break;
+                    case Type_librarydisp.all_image:
+                        if (_selectRow < 0 || _selectRow >= _image.librarylist.Count)
+                            return;
+                        titre = _image.librarylist.ElementAt(_selectRow)._Titre;
+                        _image.save_image();
+                        break;
+                }
+                Locator.WMPLocator.Add(titre);
+                UpdatePannelPlaylist();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
 
         void AddLibPlaylist(object sender, EventArgs e)
         {

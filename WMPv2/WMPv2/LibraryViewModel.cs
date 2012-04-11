@@ -40,6 +40,7 @@ namespace WMPv2
         Video_filter _vid;
         Audio_filter _aud;
         String _currentName;
+        String _filter;
 
         #region action Playlist
         private void add_Playlist(MediaContent content)
@@ -170,7 +171,7 @@ namespace WMPv2
         }
 
         #endregion
-
+        
         #region xml
 
         #region load
@@ -184,7 +185,9 @@ namespace WMPv2
                 clear_libraryList();
                 try
                 {
-                    using (FileStream fs = new FileStream("../../Playlist/" + file + ".xml", FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                    if (Directory.Exists("./Playlist/") == false)
+                        Directory.CreateDirectory("./Playlist/");
+                    using (FileStream fs = new FileStream("./Playlist/" + file + ".xml", FileMode.OpenOrCreate, FileAccess.ReadWrite))
                     {
                         try
                         {
@@ -212,7 +215,9 @@ namespace WMPv2
                 _PlaylistList.Clear();
                 try
                 {
-                    using (FileStream fs = new FileStream("../../Playlist/" + file + ".xml", FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                    if (Directory.Exists("./Playlist/") == false)
+                        Directory.CreateDirectory("./Playlist/");
+                    using (FileStream fs = new FileStream("./Playlist/" + file + ".xml", FileMode.OpenOrCreate, FileAccess.ReadWrite))
                     {
                         try
                         {
@@ -249,7 +254,9 @@ namespace WMPv2
             _PlaylistList.Clear();
             try
             {
-                using (FileStream fs = new FileStream("../../Playlist/" + file + ".xml", FileMode.OpenOrCreate, FileAccess.ReadWrite))
+                if (Directory.Exists("./Playlist/") == false)
+                    Directory.CreateDirectory("./Playlist/");
+                using (FileStream fs = new FileStream("./Playlist/" + file + ".xml", FileMode.OpenOrCreate, FileAccess.ReadWrite))
                 {
                     try
                     {
@@ -320,7 +327,9 @@ namespace WMPv2
             {
                 try
                 {
-                    using (FileStream fs = new FileStream("../../Playlist/" + file + ".xml", FileMode.Create, FileAccess.ReadWrite))
+                    if (Directory.Exists("./Playlist/") == false)
+                        Directory.CreateDirectory("./Playlist/");
+                    using (FileStream fs = new FileStream("./Playlist/" + file + ".xml", FileMode.Create, FileAccess.ReadWrite))
                     {
                         try
                         {
@@ -342,7 +351,9 @@ namespace WMPv2
             {
                 try
                 {
-                    using (FileStream fs = new FileStream("../../Playlist/" + file + ".xml", FileMode.Create, FileAccess.ReadWrite))
+                    if (Directory.Exists("./Playlist/") == false)
+                        Directory.CreateDirectory("./Playlist/");
+                    using (FileStream fs = new FileStream("./Playlist/" + file + ".xml", FileMode.Create, FileAccess.ReadWrite))
                     {
                         try
                         {
@@ -366,7 +377,9 @@ namespace WMPv2
         {
             try
             {
-                using (FileStream fs = new FileStream("../../Playlist/" + file + ".xml", FileMode.Create, FileAccess.ReadWrite))
+                if (Directory.Exists("./Playlist/") == false)
+                    Directory.CreateDirectory("./Playlist/");
+                using (FileStream fs = new FileStream("./Playlist/" + file + ".xml", FileMode.Create, FileAccess.ReadWrite))
                 {
                     try
                     {
@@ -389,7 +402,9 @@ namespace WMPv2
         {
             try
             {
-                using (FileStream fs = new FileStream("../../Playlist/" + file + ".xml", FileMode.Create, FileAccess.ReadWrite))
+                if (Directory.Exists("./Playlist/") == false)
+                    Directory.CreateDirectory("./Playlist/");
+                using (FileStream fs = new FileStream("./Playlist/" + file + ".xml", FileMode.Create, FileAccess.ReadWrite))
                 {
                     try
                     {
@@ -506,6 +521,7 @@ namespace WMPv2
             if (index >= 0 && index < _PlaylistList.Count && (index + 1) <= (int)Audio_filter.Genre)
             {
                 _aud = (Audio_filter)(index + 1);
+                
                 return true;
             }
             return false;
@@ -532,31 +548,6 @@ namespace WMPv2
         }
 
         #endregion
-
-        public void modify_content(int row, int column)
-        {
-            if (row >= 0 && row < librarylist.Count)
-            {
-                switch (column)
-                {
-                    case 0:
-                        break;
-                    case 1:
-                  //      librarylist.ElementAt(row)._Numero = _LibraryList.   <List<MediaContent>>
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    case 6:
-                        break;
-                }
-            }
-        }
 
         public bool validPlaylist(int index)
         {

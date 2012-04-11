@@ -39,6 +39,8 @@ namespace WMPv2
         public static LibraryViewModel _video;
         public static LibraryViewModel _image;
 
+        int _selectRow;
+
         String[] Img_type = new String[] 
         { ".bmp", ".efig", ".fits", ".gif",
           ".ief", ".jfif", ".jif", ".pcx",
@@ -94,7 +96,7 @@ namespace WMPv2
             PannelPlaylistList.ItemsSource = null;
             PannelPlaylistList.ItemsSource = Locator.WMPLocator._currentlist;
 
-          
+            _selectRow = -1;
         }
 
         private void ShowVideo(object sender, EventArgs e)
@@ -116,16 +118,7 @@ namespace WMPv2
 
         private void MediaEnd(object sender, EventArgs e)
         {
-            int nb;
-            List<MediaContent> mylist;
-
             this.Stop(sender, new RoutedEventArgs());
-            mylist = Locator.WMPLocator._currentlist_media;
-            nb = Locator.WMPLocator._currentMedia;
-            if (Locator.WMPLocator._currentlist_media.Count <= nb && nb > 0)
-                nb = 0;
-            if (Locator.WMPLocator._currentlist_media.Count > nb)
-                LoadFile(Locator.WMPLocator._currentlist_media[nb]._Titre);
         }
 
         private void Quit(object sender = null, EventArgs e = null)
@@ -133,9 +126,24 @@ namespace WMPv2
             this.Close();
         }
 
-        private void PrevButton_MouseDown(object sender, MouseButtonEventArgs e)
+        private void MenuLibVideoText_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            dispVideo();
+        }
 
+        private void MenuLibImageText_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            dispImage();
+        }
+
+        private void MenuLibMusiqueText_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            dispMusic();
+        }
+
+        private void MenuLibPlaylistText_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            dispAllPlaylist();
         }
     }
 }

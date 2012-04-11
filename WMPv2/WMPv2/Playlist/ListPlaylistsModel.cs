@@ -22,13 +22,13 @@ namespace WMPv2
         {
             _List = new ListPlaylists();
             _Names = new List<string>();
-            XMLOpen();
+            /*XMLOpen();
             if (_Names.Count == 0)
                 OpenPlaylistfromXML("Unnamed Playlist 0");
             else
-                OpenPlaylistfromXML(_Names[0]);
+                OpenPlaylistfromXML(_Names[0]);*/
         }
-
+        /*
         public void XMLSave()
         {
             using (FileStream fs = new FileStream("../../Playlist/ListPlaylist.xml", FileMode.OpenOrCreate))
@@ -37,6 +37,7 @@ namespace WMPv2
 
                 xml.Serialize(fs, _Names);
             }
+            
         }
 
         public void XMLRefresh()
@@ -122,5 +123,6 @@ namespace WMPv2
                 _Current = xml.Deserialize(fs) as MediaPlaylist;
             }
         }
+         * */
     }
 }
