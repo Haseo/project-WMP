@@ -66,36 +66,35 @@ namespace WMPv2
             }
         }
 
-        //private void LoadStream(object sender, EventArgs e)
-        //{
-        //    Microsoft.Win32.OpenFileDialog openwin;
-        //    string extension;
+        private void NextMedia(object sender, RoutedEventArgs e)
+        {
+            int nb;
+            List<MediaContent> mylist;
 
-        //    openwin = new Microsoft.Win32.OpenFileDialog();
-        //    openwin.AddExtension = true;
-        //    openwin.DefaultExt = "*.*";
-        //    openwin.Filter = "All (*.*)|*.*|Video (*.avi, *.mpg, *.wmv)|*.avi;*.mpg;*.wmv|Image (*.jpg, *.png)|*.jpg;*.png";
-        //    openwin.ShowDialog();
-        //    if (openwin.FileName.Length > 0)
-        //    {
-        //        extension = openwin.FileName.Substring(openwin.FileName.Length - 4);
-        //        if (extension == ".avi" || extension == ".mpg" || extension == ".wmv")
-        //        {
-        //            _LastVideoSource = new Uri(openwin.FileName);
-        //            ShowVideo(sender, e);
-        //        }
-        //        if (string.Equals(extension, ".jpg", StringComparison.CurrentCultureIgnoreCase) || string.Equals(extension, ".png", StringComparison.CurrentCultureIgnoreCase))
-        //        {
-        //            BitmapImage logo = new BitmapImage();
+            this.Stop(sender, e);
+            mylist = Locator.WMPLocator._currentlist_media;
+            nb = Locator.WMPLocator._currentMedia;
+            if (Locator.WMPLocator._currentlist_media.Count <= nb && nb > 0)
+                nb = 0;
+            if (Locator.WMPLocator._currentlist_media.Count > nb)
+                LoadFile(Locator.WMPLocator._currentlist_media[nb]._Titre, nb);
+        }
 
-        //            logo.BeginInit();
-        //            logo.UriSource = new Uri(openwin.FileName);
-        //            logo.EndInit();
-        //            this.ImagePlayer.Source = logo;
-        //            ShowImage(sender, e);
-        //        }
-        //    }
-        //}
+        private void PrevMedia(object sender, RoutedEventArgs e)
+        {
+            int nb;
+            List<MediaContent> mylist;
+
+            this.Stop(sender, e);
+            mylist = Locator.WMPLocator._currentlist_media;
+            nb = Locator.WMPLocator._currentMedia - 2;
+            if (nb < 0)
+                nb = Locator.WMPLocator._currentlist_media.Count - 1;
+            if (Locator.WMPLocator._currentlist_media.Count <= nb && nb > 0)
+                nb = 0;
+            if (Locator.WMPLocator._currentlist_media.Count > nb)
+                LoadFile(Locator.WMPLocator._currentlist_media[nb]._Titre, nb);
+        }
 
         private void Load(object sender, EventArgs e)
         {
@@ -145,16 +144,23 @@ namespace WMPv2
             }
         }
 
-        private void LoadFile(string filename)
+        private void LoadFile(string filename, int current = -1)
         {
             string extension;
             Microsoft.Win32.OpenFileDialog openwin = new Microsoft.Win32.OpenFileDialog();
 
             openwin.FileName = filename.ToString();
+            if (current != -1)
+                Locator.WMPLocator._currentMedia = current + 1;
+            else
+                Locator.WMPLocator._currentMedia += 1;
             if (openwin.FileName.Length > 0)
             {
                 extension = openwin.FileName.Substring(openwin.FileName.Length - 4);
-                if (extension == ".avi" || extension == ".mpg" || extension == ".wmv" || extension == ".wma" || extension == ".mp3" || extension == ".wav")
+                if (extension.Equals(".avi", StringComparison.CurrentCultureIgnoreCase) || extension.Equals(".mpg", StringComparison.CurrentCultureIgnoreCase) ||
+                   extension.Equals(".wmv", StringComparison.CurrentCultureIgnoreCase) || extension.Equals(".mp4", StringComparison.CurrentCultureIgnoreCase) ||
+                   extension.Equals(".wma", StringComparison.CurrentCultureIgnoreCase) || extension.Equals(".mp3", StringComparison.CurrentCultureIgnoreCase) ||
+                   extension.Equals(".wav", StringComparison.CurrentCultureIgnoreCase))
                 {
                     calcMediaTime();
                     _LastVideoSource = new Uri(openwin.FileName);
@@ -291,7 +297,6 @@ namespace WMPv2
         {
             MediaPlayer.Position = TimeSpan.FromSeconds(SeekBar.Value);
             _timer.Start();
-            //            Play(sender, new RoutedEventArgs());
         }
 
 

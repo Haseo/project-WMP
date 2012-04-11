@@ -79,7 +79,7 @@
     		<Grid x:Name="MediaGrid" Margin="0" Background="#FF272727" Visibility="Hidden">
     			<Border x:Name="MediaBorder" BorderBrush="#FF3D3D3D" BorderThickness="0,2" CornerRadius="1" Margin="0" >
     				<Grid x:Name="PlayGrid">
-    					<MediaElement x:Name="MediaPlayer" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" LoadedBehavior="Manual" />
+    					<MediaElement x:Name="MediaPlayer" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" LoadedBehavior="Manual"  MediaEnded="MediaEnd" />
                         <Image x:Name="ImagePlayer" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden"/>
     				</Grid>
     			</Border>
@@ -103,7 +103,7 @@
                             <Image x:Name="MenuLibPlaylistIcone" Source="Images/LogoPlaylist.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0"/>
                             <TextBlock x:Name="MenuLibPlaylistText" Text="Playlists" Margin="2, 0, 0, 0" >
                             	<TextBlock.Foreground>
-                            		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelForeground}"/>
+                            		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._LibraryForeground}"/>
                             	</TextBlock.Foreground>
                             </TextBlock>
                         </StackPanel>
@@ -126,7 +126,7 @@
                             <Image x:Name="MenuLibMusiqueIcone" Source="Images\LogoMusique.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0" />
                             <TextBlock x:Name="MenuLibMusiqueText" Text="Musique" Margin="2, 0, 0, 0">
                             	<TextBlock.Foreground>
-                            		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelForeground}"/>
+                            		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._LibraryForeground}"/>
                             	</TextBlock.Foreground>
                             </TextBlock>
     					</StackPanel>
@@ -146,7 +146,7 @@
                             <Image x:Name="MenuLibVideoIcone" Source="Images\LogoVideo.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0"/>
                             <TextBlock x:Name="MenuLibVideoText" Text="Video" Margin="2, 0, 0, 0">
                             	<TextBlock.Foreground>
-                            		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelForeground}"/>
+                            		<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._LibraryForeground}"/>
                             	</TextBlock.Foreground>
                             </TextBlock>
     					</StackPanel>
@@ -166,7 +166,7 @@
     						<Image x:Name="MenuLibImageIcone" Source="Images/Play.png" Stretch="Uniform" Width="15" Height="15" Margin="2, 0, 0, 0"/>
     						<TextBlock x:Name="MenuLibImageText" Text="Image" Margin="2, 0, 0, 0" >
     							<TextBlock.Foreground>
-    								<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._PannelForeground}"/>
+    								<SolidColorBrush Color="{Binding MainStaticStyle._ColorStyle._LibraryForeground}"/>
     							</TextBlock.Foreground>
     						</TextBlock>
     					</StackPanel>
@@ -254,11 +254,15 @@
     		</Grid.Background>
     		<Image x:Name="PlayButton" Source="Images\Play.png" HorizontalAlignment="Left" Width="22" Margin="4,4,0,4" Height="22"
                    MouseDown="Play" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
-    		<Image x:Name="StopButton" Source="Images/Stop.png" HorizontalAlignment="Left" Width="22" Margin="31,4,0,4" Height="22"
+    		<Image x:Name="StopButton" Source="Images/Stop.png" HorizontalAlignment="Left" Width="22" Margin="30,4,0,4" Height="22"
                    MouseDown="Stop" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
-    		<Slider x:Name="SeekBar" Margin="141,4,131,4" d:LayoutOverrides="Height" IsMoveToPointEnabled="True"
+    		<Image x:Name="PrevButton" Source="Images/PrevMedia.png" HorizontalAlignment="Left" Width="22" Margin="56,4,0,4" Height="22"
+    			MouseDown="PrevMedia" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
+    		<Image x:Name="NextButton" Source="Images/NextMedia.png" HorizontalAlignment="Left" Width="22" Margin="82,4,0,4" Height="22"
+    			MouseDown="NextMedia" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
+    		<TextBlock x:Name="MediaTimeDisp" HorizontalAlignment="Left" Width="67" Margin="115,8,0,7" Foreground="#FFE7E7E7" />
+    		<Slider x:Name="SeekBar" Margin="191,4,131,4" d:LayoutOverrides="Height" IsMoveToPointEnabled="True"
                     PreviewMouseLeftButtonDown="DragStart" PreviewMouseLeftButtonUp="DragComplete" MouseLeftButtonDown="DragStart"/>
-    		<TextBlock x:Name="MediaTimeDisp" HorizontalAlignment="Left" Width="67" Margin="70,8,0,7" Foreground="#FFE7E7E7" />
     		<Image x:Name="VolumeButton" Source="Images/SoundOn.png" HorizontalAlignment="Right" Width="22" Margin="0,4,96,4" Height="22"
                    MouseDown="SwapVolume" MouseEnter="ButtonEnter" MouseLeave="ButtonLeave"/>
     		<Slider x:Name="VolumeSlider" Margin="0,4,30,4" d:LayoutOverrides="Height" HorizontalAlignment="Right" Width="62"

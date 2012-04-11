@@ -68,7 +68,7 @@ namespace WMPv2
             _DefaultTime = "00:00:00";
             _DispTotalMediaTime = false;
             _Style = new ColorStyle();
-            //this.WindowStyle = WindowStyle.None;
+            apply_style(new object(), new EventArgs());
 
             MediaPlayer.MediaOpened += (o, e) =>
             {
@@ -116,12 +116,26 @@ namespace WMPv2
 
         private void MediaEnd(object sender, EventArgs e)
         {
+            int nb;
+            List<MediaContent> mylist;
+
             this.Stop(sender, new RoutedEventArgs());
+            mylist = Locator.WMPLocator._currentlist_media;
+            nb = Locator.WMPLocator._currentMedia;
+            if (Locator.WMPLocator._currentlist_media.Count <= nb && nb > 0)
+                nb = 0;
+            if (Locator.WMPLocator._currentlist_media.Count > nb)
+                LoadFile(Locator.WMPLocator._currentlist_media[nb]._Titre);
         }
 
         private void Quit(object sender = null, EventArgs e = null)
         {
             this.Close();
+        }
+
+        private void PrevButton_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }

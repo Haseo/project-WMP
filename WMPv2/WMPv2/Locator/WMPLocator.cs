@@ -17,6 +17,7 @@ namespace WMPv2.Locator
         public static List<string> _currentlist;
         public static String _currentName;
         public static String _currentImg;
+        public static int _currentMedia;
 
         public WMPLocator()
         {
@@ -33,6 +34,7 @@ namespace WMPv2.Locator
             _currentlist = new List<string>();
             _currentName = "Unnamed";
             _currentImg = @"Images\AlbumImage.png";
+            _currentMedia = 0;
             CreateMainStyle();
         }
 
@@ -42,6 +44,7 @@ namespace WMPv2.Locator
             _currentlist_media.Clear();
             _currentName = "";
             _mainStyle.Cleanup();
+            _currentMedia = 0;
             _mainStyle = null;
         }
 

@@ -100,8 +100,10 @@ namespace WMPv2
             logo.EndInit();
             PlaylistImage.Source = logo;
             PannelPlaylistName.Text = Locator.WMPLocator._currentName;
+            PannelPlaylistList.BeginInit();
             PannelPlaylistList.ItemsSource = null;
             PannelPlaylistList.ItemsSource = Locator.WMPLocator._currentlist;
+            PannelPlaylistList.EndInit();
         }
     }
 }

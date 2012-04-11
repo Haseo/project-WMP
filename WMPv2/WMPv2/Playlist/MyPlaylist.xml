@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ArrayOfMediaContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MediaContent>
+    <_Numero>-1</_Numero>
+    <_Titre>C:\Users\Public\Videos\Sample Videos\Wildlife.wmv</_Titre>
+    <_Type>Inconnu</_Type>
+  </MediaContent>
+  <MediaContent>
+    <_Numero>-1</_Numero>
+    <_Titre>C:\Users\Public\Videos\Sample Videos\Concert.MP4</_Titre>
+    <_Type>Inconnu</_Type>
+  </MediaContent>
+  <MediaContent>
+    <_Numero>-1</_Numero>
+    <_Titre>C:\Users\Public\Videos\Sample Videos\Concert.avi</_Titre>
+    <_Type>Inconnu</_Type>
+  </MediaContent>
+</ArrayOfMediaContent>

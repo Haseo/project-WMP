@@ -41,7 +41,7 @@ namespace WMPv2
             _PannelBackground = "#FF212121";
             _PannelForeground = "#FFA7A7A7";
             _LibraryBackground = "#FFB8B8B8";
-            _LibraryForeground = "#FF212121";
+            _LibraryForeground = "#FFA7A7A7";
         }
 
     }

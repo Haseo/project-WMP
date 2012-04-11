@@ -85,6 +85,18 @@ namespace WMPv2
                 logo.EndInit();
                 ShowPannelButton.Source = logo;
             }
+            if (sender == PrevButton)
+            {
+                logo.UriSource = new Uri(@"Images\PrevMediaOver.png", UriKind.Relative);
+                logo.EndInit();
+                PrevButton.Source = logo;
+            }
+            if (sender == NextButton)
+            {
+                logo.UriSource = new Uri(@"Images\NextMediaOver.png", UriKind.Relative);
+                logo.EndInit();
+                NextButton.Source = logo;
+            }
         }
 
         private void ButtonLeave(object sender, EventArgs e)
@@ -134,6 +146,19 @@ namespace WMPv2
                 logo.EndInit();
                 ShowPannelButton.Source = logo;
             }
+            if (sender == PrevButton)
+            {
+                logo.UriSource = new Uri(@"Images\PrevMedia.png", UriKind.Relative);
+                logo.EndInit();
+                PrevButton.Source = logo;
+            }
+            if (sender == NextButton)
+            {
+                logo.UriSource = new Uri(@"Images\NextMedia.png", UriKind.Relative);
+                logo.EndInit();
+                NextButton.Source = logo;
+            }
+
         }
 
     }
