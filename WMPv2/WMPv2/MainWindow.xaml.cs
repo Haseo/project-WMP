@@ -39,6 +39,26 @@ namespace WMPv2
         public static LibraryViewModel _video;
         public static LibraryViewModel _image;
 
+        String[] Img_type = new String[] 
+        { ".bmp", ".efig", ".fits", ".gif",
+          ".ief", ".jfif", ".jif", ".pcx",
+          ".png", ".psid", ".ric", ".spf",
+          ".sxd", ".tif", ".tiff", ".wmf",
+          ".xbm", ".xpm", ".zei", ".jpg"};
+        String[] Audio_type = new String[] 
+        { ".aac", ".ac3", ".au", ".au3",
+          ".avi", ".ac3", ".cda", ".m3u",
+          ".m4a", ".m4r", ".maud", ".mp2",
+          ".mp3", ".ogg", ".psid", ".raw",
+          ".rso", ".sb", ".sf", ".smp",
+          ".snd", ".voc", ".wav"};
+        String[] Video_type = new String[] 
+        { ".flv", ".mov", ".movie", ".mp4",
+          ".qt", ".rv", ".vob", ".wmv"};
+        String[] Streaming_type = new String[] 
+        { ".asf", ".ra", ".rm", ".smil",
+          ".ram", ".RMVB", ".rv"};
+
         public MainWindow()
         {
             InitializeComponent();
@@ -73,6 +93,8 @@ namespace WMPv2
             PannelPlaylistName.Text = Locator.WMPLocator._currentName;
             PannelPlaylistList.ItemsSource = null;
             PannelPlaylistList.ItemsSource = Locator.WMPLocator._currentlist;
+
+          
         }
 
         private void ShowVideo(object sender, EventArgs e)
@@ -100,11 +122,6 @@ namespace WMPv2
         private void Quit(object sender = null, EventArgs e = null)
         {
             this.Close();
-        }
-
-        private void PannelPlaylistList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

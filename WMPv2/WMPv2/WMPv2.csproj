@@ -78,6 +78,7 @@
     </ApplicationDefinition>
     <Compile Include="MainWindowLibraryMenu.cs" />
     <Compile Include="LibraryViewModel.cs" />
+    <Compile Include="mainWindowTest.cs" />
     <Compile Include="MediaContent.cs" />
     <Compile Include="MainWindowMenu.cs" />
     <Compile Include="Playlist\ListPlaylistsModel.cs" />

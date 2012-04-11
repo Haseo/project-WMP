@@ -181,9 +181,10 @@
                         </ListBox>
                     </Grid>
     			</Grid>
-                <DataGrid x:Name="ContentLibraryGrid" Margin="200,0,0,0" Background="#FF747474" ItemsSource="{Binding _LibraryList}" AutoGenerateColumns="False" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="#273B3B3B" RowBackground="#00ADADAD">
+                <DataGrid x:Name="ContentLibraryGrid" Margin="200,0,0,0" Background="#FF747474" ItemsSource="{Binding _LibraryList}" AutoGenerateColumns="False" HorizontalGridLinesBrush="{x:Null}" 
+                          VerticalGridLinesBrush="#273B3B3B" RowBackground="#00ADADAD" TargetUpdated="Library_CellEdit" TextInput="Library_CellEdit" CellEditEnding="Library_CellEdit">
                     <DataGrid.Columns>
-                        <DataGridTemplateColumn Header="Album" Width="80">
+                        <DataGridTemplateColumn Header="Album" IsReadOnly="True" Width="80">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <!--<Image Source="{Binding _image}"></Image>-->
@@ -192,7 +193,7 @@
                         </DataGridTemplateColumn>
                         <DataGridTextColumn Header="#" Width="20" Binding="{Binding _Numero}"/>
                         <DataGridTextColumn Header="Titre" Width="120" Binding="{Binding _Titre}"/>
-                        <DataGridTextColumn Header="Durée" Width="50" Binding="{Binding _Duree}"/>
+                        <DataGridTextColumn Header="Durée" Width="50" IsReadOnly="True" Binding="{Binding _Duree}"/>
                         <DataGridTextColumn Header="Artiste" Width="110" Binding="{Binding _Artiste}"/>
                         <DataGridTextColumn Header="Album" Width="100" Binding="{Binding _Album}"/>
                         <DataGridTextColumn Header="Genre" Width="100" Binding="{Binding _Genre}"/>

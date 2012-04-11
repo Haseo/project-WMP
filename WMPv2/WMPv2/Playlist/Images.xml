@@ -1,2 +1,13 @@
 <?xml version="1.0"?>
-<ArrayOfMediaContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfMediaContent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MediaContent>
+    <_Numero>-1</_Numero>
+    <_Titre>C:\Users\florian\Pictures\Bastion\Scumbag_wallpaper1680x1050.jpg</_Titre>
+    <_Type>Inconnu</_Type>
+  </MediaContent>
+  <MediaContent>
+    <_Numero>-1</_Numero>
+    <_Titre>C:\Users\florian\Pictures\Bastion\kid_winter_wallpaper_1680x1050.jpg</_Titre>
+    <_Type>Inconnu</_Type>
+  </MediaContent>
+</ArrayOfMediaContent>

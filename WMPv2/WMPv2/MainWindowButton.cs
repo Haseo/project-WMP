@@ -135,6 +135,12 @@ namespace WMPv2
                     ShowImage(new object(), new EventArgs());
                 }
                 Locator.WMPLocator.Add(openwin.FileName);
+                if (IsAudio(openwin.FileName) == true)
+                    _music.add_music(openwin.FileName);
+                else if (IsVideo(openwin.FileName) == true)
+                    _video.add_video(openwin.FileName);
+                else if (IsImage(openwin.FileName) == true)
+                    _image.add_image(openwin.FileName);
                 UpdatePannelPlaylist();
             }
         }
@@ -275,17 +281,19 @@ namespace WMPv2
             calcMediaTime();
         }
 
-        private void DragStart(object sender, MouseEventArgs e)
+        private void DragStart(object sender, EventArgs e)
         {
             _timer.Stop();
         }
+
 
         private void DragComplete(object sender, EventArgs e)
         {
             MediaPlayer.Position = TimeSpan.FromSeconds(SeekBar.Value);
             _timer.Start();
-//            Play(sender, new RoutedEventArgs());
+            //            Play(sender, new RoutedEventArgs());
         }
+
 
     }
 }

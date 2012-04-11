@@ -39,6 +39,7 @@ namespace WMPv2
         Image_filter _img;
         Video_filter _vid;
         Audio_filter _aud;
+        String _currentName;
 
         #region action Playlist
         private void add_Playlist(MediaContent content)
@@ -190,8 +191,6 @@ namespace WMPv2
                             XmlSerializer xml = new XmlSerializer(librarylist.GetType());
 
                             librarylist = xml.Deserialize(fs) as List<MediaContent>;
-                            librarylist.Add(new MediaContent("Test 1"));
-                            librarylist.Add(new MediaContent("Test 2"));
                             _LibraryList = CollectionViewSource.GetDefaultView(librarylist);
                             _LibraryList.Refresh();
                         }
@@ -286,6 +285,7 @@ namespace WMPv2
         public void load_playlist(string name)
         {
             load_librarylist(name, true);
+            _currentName = name;
         }
 
         public void load_music()
@@ -417,6 +417,12 @@ namespace WMPv2
             save_librarylist(name, false);
         }
 
+        public void save_playlist()
+        {
+            if (_currentName.Length > 0)
+                save_librarylist(_currentName, false);
+        }
+
         public void save_music()
         {
             save_librarylist("Music", false);
@@ -527,6 +533,31 @@ namespace WMPv2
 
         #endregion
 
+        public void modify_content(int row, int column)
+        {
+            if (row >= 0 && row < librarylist.Count)
+            {
+                switch (column)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                  //      librarylist.ElementAt(row)._Numero = _LibraryList.   <List<MediaContent>>
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                }
+            }
+        }
+
         public bool validPlaylist(int index)
         {
             if (index >= 0 && index < _PlaylistList.Count && index < librarylist.Count)
@@ -567,6 +598,29 @@ namespace WMPv2
             return false;
         }
 
+        public void add_content(MediaContent item)
+        {
+            add_libraryList(item);
+        }
+
+        public void add_music(String name)
+        {
+            add_content(new MediaContent(name));
+            save_music();
+        }
+
+        public void add_video(String name)
+        {
+            add_content(new MediaContent(name));
+            save_video();
+        }
+
+        public void add_image(String name)
+        {
+            add_content(new MediaContent(name));
+            save_image();
+        }
+
         public LibraryViewModel()
         {
             global = true;
@@ -576,6 +630,7 @@ namespace WMPv2
             librarylist = new List<MediaContent>();
             _PlaylistList = new List<String>();
             _LibraryList = CollectionViewSource.GetDefaultView(librarylist);
+            _currentName = "";
         }
 
     }

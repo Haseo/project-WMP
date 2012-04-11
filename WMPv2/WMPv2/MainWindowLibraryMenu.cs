@@ -44,11 +44,16 @@ namespace WMPv2
 
         void dispAllPlaylist()
         {
-            if (type_disp != Type_librarydisp.all_playlist)
+           // if (type_disp != Type_librarydisp.all_playlist)
             {
                 type_disp = Type_librarydisp.all_playlist;
+                ContentLibraryGrid.ColumnFromDisplayIndex(1).IsReadOnly = true;
+                ContentLibraryGrid.ColumnFromDisplayIndex(2).IsReadOnly = true;
+                ContentLibraryGrid.ColumnFromDisplayIndex(4).IsReadOnly = true;
+                ContentLibraryGrid.ColumnFromDisplayIndex(5).IsReadOnly = true;
+                ContentLibraryGrid.ColumnFromDisplayIndex(6).IsReadOnly = true;
                 LibraryGrid.BeginInit();
-                //   LibraryGrid.DataContext = _playlists;
+                LibraryGrid.DataContext = _playlists;
                 LibraryGrid.EndInit();
             }
         }
@@ -56,6 +61,11 @@ namespace WMPv2
         void dispPlaylist()
         {
             type_disp = Type_librarydisp.playlist;
+            ContentLibraryGrid.ColumnFromDisplayIndex(1).IsReadOnly = false;
+            ContentLibraryGrid.ColumnFromDisplayIndex(2).IsReadOnly = false;
+            ContentLibraryGrid.ColumnFromDisplayIndex(4).IsReadOnly = false;
+            ContentLibraryGrid.ColumnFromDisplayIndex(5).IsReadOnly = false;
+            ContentLibraryGrid.ColumnFromDisplayIndex(6).IsReadOnly = false;
         }
 
         void dispMusic()
@@ -64,8 +74,13 @@ namespace WMPv2
             {
                 type_disp = Type_librarydisp.all_music;
                 LibraryGrid.BeginInit();
-                //    LibraryGrid.DataContext = _music;
+                LibraryGrid.DataContext = _music;
                 LibraryGrid.EndInit();
+                ContentLibraryGrid.ColumnFromDisplayIndex(1).IsReadOnly = false;
+                ContentLibraryGrid.ColumnFromDisplayIndex(2).IsReadOnly = false;
+                ContentLibraryGrid.ColumnFromDisplayIndex(4).IsReadOnly = false;
+                ContentLibraryGrid.ColumnFromDisplayIndex(5).IsReadOnly = false;
+                ContentLibraryGrid.ColumnFromDisplayIndex(6).IsReadOnly = false;
             }
         }
 
@@ -75,8 +90,13 @@ namespace WMPv2
             {
                 type_disp = Type_librarydisp.all_video;
                 LibraryGrid.BeginInit();
-                //    LibraryGrid.DataContext = _video;
+                LibraryGrid.DataContext = _video;
                 LibraryGrid.EndInit();
+                ContentLibraryGrid.ColumnFromDisplayIndex(1).IsReadOnly = false;
+                ContentLibraryGrid.ColumnFromDisplayIndex(2).IsReadOnly = false;
+                ContentLibraryGrid.ColumnFromDisplayIndex(4).IsReadOnly = false;
+                ContentLibraryGrid.ColumnFromDisplayIndex(5).IsReadOnly = false;
+                ContentLibraryGrid.ColumnFromDisplayIndex(6).IsReadOnly = false;
             }
         }
 
@@ -86,8 +106,13 @@ namespace WMPv2
             {
                 type_disp = Type_librarydisp.all_image;
                 LibraryGrid.BeginInit();
-                //  LibraryGrid.DataContext = _image;
+                LibraryGrid.DataContext = _image;
                 LibraryGrid.EndInit();
+                ContentLibraryGrid.ColumnFromDisplayIndex(1).IsReadOnly = false;
+                ContentLibraryGrid.ColumnFromDisplayIndex(2).IsReadOnly = false;
+                ContentLibraryGrid.ColumnFromDisplayIndex(4).IsReadOnly = false;
+                ContentLibraryGrid.ColumnFromDisplayIndex(5).IsReadOnly = false;
+                ContentLibraryGrid.ColumnFromDisplayIndex(6).IsReadOnly = false;
             }
         }
 
@@ -114,7 +139,7 @@ namespace WMPv2
                 changeExpandLogo(MenuLibPlaylistOpen, false);
                 MenuLibraryRow0.Height = new System.Windows.GridLength(20.0);
             }
-            dispAllPlaylist();
+          //  dispAllPlaylist();
         }
 
         void ExpandMusique(object sender, EventArgs e)
@@ -350,6 +375,31 @@ namespace WMPv2
                     LibraryGrid.EndInit();
                 }
                 _playlists.save_all_playlist();
+            }
+        }
+
+        #endregion
+
+        #region datagrid
+
+        private void Library_CellEdit(object sender, EventArgs e)
+        {
+            switch (type_disp)
+            {
+                case Type_librarydisp.all_playlist :
+                    break;
+                case Type_librarydisp.playlist :
+                    _playlists.save_playlist();
+                    break;
+                case Type_librarydisp.all_music :
+                    _music.save_music();
+                    break;
+                case Type_librarydisp.all_video :
+                    _video.save_video();
+                    break;
+                case Type_librarydisp.all_image :
+                    _image.save_image();
+                    break;
             }
         }
 

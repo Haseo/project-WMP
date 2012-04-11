@@ -50,3 +50,5 @@ C:\Users\florian\Documents\Project\project-WMP\Dacre - WMPv2 - Copy\WMPv2\obj\x8
 C:\Users\florian\Documents\Project\project-WMP\Dacre - WMPv2 - Copy\WMPv2\obj\x86\Debug\WMPv2.Properties.Resources.resources
 C:\Users\florian\Documents\Project\project-WMP\Dacre - WMPv2 - Copy\WMPv2\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\florian\Documents\Project\project-WMP\Dacre - WMPv2 - Copy\WMPv2\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\florian\Documents\Project\project-WMP\old\Dacre - WMPv2\WMPv2\obj\x86\Debug\WMPv2.exe
+C:\Users\florian\Documents\Project\project-WMP\old\Dacre - WMPv2\WMPv2\obj\x86\Debug\WMPv2.pdb

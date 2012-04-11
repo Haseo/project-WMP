@@ -24,3 +24,29 @@ C:\Users\florian\Documents\Project\project-WMP\Dacre - WMPv2\WMPv2\obj\x86\Debug
 C:\Users\florian\Documents\Project\project-WMP\Dacre - WMPv2\WMPv2\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\florian\Documents\Project\project-WMP\Dacre - WMPv2\WMPv2\obj\x86\Debug\WMPv2.exe
 C:\Users\florian\Documents\Project\project-WMP\Dacre - WMPv2\WMPv2\obj\x86\Debug\WMPv2.pdb
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\WMPv2.exe
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\WMPv2.pdb
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\bin\Debug\WMPv2.exe
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\bin\Debug\WMPv2.pdb
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\bin\Debug\GalaSoft.MvvmLight.Extras.WPF4.dll
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\bin\Debug\GalaSoft.MvvmLight.WPF4.dll
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\bin\Debug\WPFToolkit.Extended.dll
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\AboutWin.baml
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\ChangeStyleWin.baml
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\AboutWin.g.cs
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\ChangeStyleWin.g.cs
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\MainWindow.g.cs
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\App.g.cs
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\WMPv2_MarkupCompile.cache
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\WMPv2_MarkupCompile.lref
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\App.baml
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\MainWindow.baml
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\WMPv2.g.resources
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\WMPv2.Properties.Resources.resources
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\florian\Documents\Project\project-WMP\WMPv2\WMPv2\obj\x86\Debug\GenerateResource.write.1.tlog
