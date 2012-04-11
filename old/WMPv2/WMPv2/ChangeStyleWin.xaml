@@ -1,0 +1,27 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wpfx="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WMPv2.ChangeStyleWin"
+        Title="Style Editor" Height="300" Width="300">
+	<Window.Resources>
+        <Color x:Key="MenuBackGroundColor">#FF1A1A1A</Color>
+	</Window.Resources>
+    <Grid x:Name="StyleAllGrid">
+        <Border x:Name="VideoBorder" BorderBrush="#FF373737" BorderThickness="2" OpacityMask="Black" Background="#FF474747" Margin="0" CornerRadius="2">
+        	<Grid x:Name="StyleMenuBackground" Height="40" VerticalAlignment="Top" Margin="0,0,118,0">
+        		<ComboBox x:Name="PickerMenuBackground" Height="40" VerticalAlignment="Center" HorizontalAlignment="Right" Width="18" RenderTransformOrigin="-2.533,0.375">
+        			<wpfx:ColorCanvas x:Name="CanvasMenuBackground" SelectedColorChanged="SetMenuBackground" />
+        		</ComboBox>
+        		<TextBlock x:Name="TitleMenuBackground" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"><Run Language="fr-fr" Text="Menu Background"/></TextBlock>
+        		<Rectangle x:Name="ColorDisplayMenuBackground" Stroke="Black" Margin="0,8,22,8" HorizontalAlignment="Right" Width="24" Height="24">
+        			<Rectangle.Fill>
+                        <SolidColorBrush x:Name="MenuBackgroundRect" Color="{Binding SelectedColor, ElementName=CanvasMenuBackground}"/>
+        			</Rectangle.Fill>
+        		</Rectangle>
+        	</Grid>
+        </Border>
+        <Button Name="OkButton" Content="Ok" HorizontalAlignment="Right" Width="59" VerticalAlignment="Bottom" Margin="0,0,80,8" Click="OkButton_Click" />
+        <Button Name="CancelButton" Content="Annuler" HorizontalAlignment="Right" Width="59" VerticalAlignment="Bottom" Margin="0,0,8,8" Click="CancelButton_Click" />
+    </Grid>
+</Window>

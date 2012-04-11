@@ -1,0 +1,47 @@
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\bin\Debug\Windows Media Player v2.exe
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\bin\Debug\Windows Media Player v2.pdb
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\MainWindow.baml
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\App.g.cs
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2_MarkupCompile.cache
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2.g.resources
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows_Media_Player_v2.Properties.Resources.resources
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2.exe
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2.pdb
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Browser.baml
+C:\Users\Haseo\Documents\Visual Studio 2010\Projects\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Browser.g.cs
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2.exe
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2.pdb
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\bin\Debug\Windows Media Player v2.exe
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\bin\Debug\Windows Media Player v2.pdb
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Browser.baml
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\MainWindow.baml
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Browser.g.cs
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\App.g.cs
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2_MarkupCompile.cache
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2.g.resources
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows_Media_Player_v2.Properties.Resources.resources
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Haseo\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\florian\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2.exe
+C:\Users\florian\Desktop\project\project-wmp\Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2.pdb
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2.exe
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2.pdb
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\bin\Debug\Windows Media Player v2.exe
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\bin\Debug\Windows Media Player v2.pdb
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Browser.baml
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\MainWindow.baml
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Browser.g.cs
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\MainWindow.g.cs
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\App.g.cs
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2_MarkupCompile.cache
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows Media Player v2.g.resources
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\Windows_Media_Player_v2.Properties.Resources.resources
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\florian\Documents\Project\project-WMP\Florian - Windows Media Player v2\Windows Media Player v2\obj\x86\Debug\GenerateResource.write.1.tlog

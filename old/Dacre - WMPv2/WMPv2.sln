@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMPv2", "WMPv2\WMPv2.csproj", "{84552EE3-300C-4651-B438-D49BF3EF9E8B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WMPv2 Install", "WMPv2 Install\WMPv2 Install.vdproj", "{A11DA871-5742-4255-91DD-2C6E4F01984A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84552EE3-300C-4651-B438-D49BF3EF9E8B}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{84552EE3-300C-4651-B438-D49BF3EF9E8B}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{84552EE3-300C-4651-B438-D49BF3EF9E8B}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{84552EE3-300C-4651-B438-D49BF3EF9E8B}.Debug|x86.ActiveCfg = Debug|x86
+		{84552EE3-300C-4651-B438-D49BF3EF9E8B}.Debug|x86.Build.0 = Debug|x86
+		{84552EE3-300C-4651-B438-D49BF3EF9E8B}.Release|Any CPU.ActiveCfg = Release|x86
+		{84552EE3-300C-4651-B438-D49BF3EF9E8B}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{84552EE3-300C-4651-B438-D49BF3EF9E8B}.Release|Mixed Platforms.Build.0 = Release|x86
+		{84552EE3-300C-4651-B438-D49BF3EF9E8B}.Release|x86.ActiveCfg = Release|x86
+		{84552EE3-300C-4651-B438-D49BF3EF9E8B}.Release|x86.Build.0 = Release|x86
+		{A11DA871-5742-4255-91DD-2C6E4F01984A}.Debug|Any CPU.ActiveCfg = Debug
+		{A11DA871-5742-4255-91DD-2C6E4F01984A}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{A11DA871-5742-4255-91DD-2C6E4F01984A}.Debug|x86.ActiveCfg = Debug
+		{A11DA871-5742-4255-91DD-2C6E4F01984A}.Release|Any CPU.ActiveCfg = Release
+		{A11DA871-5742-4255-91DD-2C6E4F01984A}.Release|Mixed Platforms.ActiveCfg = Release
+		{A11DA871-5742-4255-91DD-2C6E4F01984A}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

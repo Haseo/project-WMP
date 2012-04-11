@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<MediaPlaylist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <_Image_s>Images\Stop.png</_Image_s>
-  <_Name_s>Toto</_Name_s>
-  <_Playlist>
-    <string>C:\Users\Public\Videos\Sample Videos\Wildlife.wmv</string>
-    <string>C:\Users\Public\Videos\Sample Videos\Concert.avi</string>
-  </_Playlist>
-</MediaPlaylist>
